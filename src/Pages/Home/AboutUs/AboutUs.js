@@ -5,6 +5,16 @@ const AboutUs = () => {
         <div className='container mx-auto'>
             <div class="grid  lg:grid-cols-2 gap-4">
                 <div class="grid grid-cols-2  gap-4">
+                    <div data-aos="flip-left"
+                        data-aos-offset="200"
+                        data-aos-delay="200"
+                        data-aos-duration="1500"
+                    ><figure><img className="shadow-lg shadow-green-300/80" src="https://i.ibb.co/vVPtpdp/car-mechanic-changing-wheels-car.jpg" alt="Album" /></figure></div>
+                    <div data-aos="flip-right"
+                        data-aos-offset="200"
+                        data-aos-delay="200"
+                        data-aos-duration="1500"
+                    ><figure><img className="shadow-lg shadow-green-300/80" src="https://i.ibb.co/fn7jTMF/car-mechanist-making-car-service.jpg" alt="Album" /></figure></div>
                     <div className='col-span-2' data-aos="fade-right"
                         data-aos-offset="200"
                         data-aos-delay="200"
@@ -13,24 +23,12 @@ const AboutUs = () => {
                         data-aos-mirror="true"
                         data-aos-once="false"
                         data-aos-anchor-placement="top-center"><figure><img className="shadow-lg shadow-green-300/80" src="https://i.ibb.co/R0FqGGT/repair-man-making-car-service.jpg" alt="Album" /></figure></div>
-                    <div data-aos="flip-left"
-                        data-aos-offset="200"
-                        data-aos-delay="200"
-                        data-aos-duration="1500"
-
-
-                    ><figure><img className="shadow-lg shadow-green-300/80" src="https://i.ibb.co/vVPtpdp/car-mechanic-changing-wheels-car.jpg" alt="Album" /></figure></div>
-                    <div data-aos="flip-right"
-                        data-aos-offset="200"
-                        data-aos-delay="200"
-                        data-aos-duration="1500"><figure><img className="shadow-lg shadow-green-300/80" src="https://i.ibb.co/vVPtpdp/car-mechanic-changing-wheels-car.jpg" alt="Album" /></figure></div>
-
                 </div>
                 <div data-aos="zoom-in-right"
                     data-aos-offset="200"
                     data-aos-delay="200"
                     data-aos-duration="1500"
-                    data-aos-easing="ease-in-out"
+                    // data-aos-easing="ease-in-out"
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="top-center" className=' flex flex-col  justify-center  '>
