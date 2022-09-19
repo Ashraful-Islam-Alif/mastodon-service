@@ -1,0 +1,6 @@
+@media only screen and (max-width: 600px) {
+    .daydate {
+        font-size: x-large;
+        padding-left: 2px;
+    }
+}

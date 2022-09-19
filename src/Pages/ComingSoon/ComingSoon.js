@@ -1,7 +1,7 @@
 import React from 'react';
-
+import './ComingSoon.css'
 const ComingSoon = ({ hoursMinSecs }) => {
-    const { days = 30, hours = 24, minutes = 0, seconds = 60 } = hoursMinSecs;
+    const { days = 29, hours = 24, minutes = 0, seconds = 0 } = hoursMinSecs;
     const [[day, hrs, mins, secs], setTime] = React.useState([days, hours, minutes, seconds]);
 
 
@@ -29,7 +29,7 @@ const ComingSoon = ({ hoursMinSecs }) => {
         return () => clearInterval(timerId);
     });
     return (
-        <div className='text-4xl text-center p-8 my-6 font-medium bg-gradient-to-r from-green-400 via-red-300 to-orange-100'>
+        <div className='text-4xl text-center p-8 font-medium bg-gradient-to-r from-green-400 via-red-300 to-orange-100'>
             <h2 className='font-bold'>Flat Discount</h2>
             <h2 className='text-lg'>Coming Soon</h2>
             <p className='p-4 sm:text-lg lg:text-7xl font-extrabold '>{`
@@ -38,7 +38,7 @@ const ComingSoon = ({ hoursMinSecs }) => {
             :${mins.toString().padStart(2, '0')}
             :${secs.toString().padStart(2, '0')}`}
             </p>
-            <p className=' xs:text-base md:text-xl lg:text-2xl lg:pl-4'><span className='md:pl-2 lg:pr-16'>Day</span> <span className='md:pl-2 lg:pr-14'>Date</span> <span className='md:pl-2 lg:pl-4'>Min</span> <span className='md:pl-2 lg:pl-20'>Sec</span></p>
+            <p className=' daydate sm:text-lg md:text-xl lg:text-2xl lg:pl-4'><span className='md:pl-2 lg:pr-16'>Day</span> <span className='md:pl-2 lg:pr-14'>Date</span> <span className='md:pl-2 lg:pl-4'>Min</span> <span className='md:pl-2 lg:pl-20'>Sec</span></p>
         </div>
     );
 };

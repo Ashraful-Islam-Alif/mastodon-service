@@ -2,8 +2,8 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div>
-            <h2 className='text-center text-2xl font-bold'>Blogs</h2>
+        <div className='container mx-auto p-4'>
+            <h2 className='text-center text-4xl font-bold py-8'>Blogs</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-4 '>
 
                 <div className=" p-4 m-4 shadow-lg shadow-green-300/80 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
