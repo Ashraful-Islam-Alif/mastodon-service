@@ -17,6 +17,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -26,7 +27,6 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-
         await signInWithEmailAndPassword(email, password);
     }
 
@@ -51,7 +51,7 @@ const Login = () => {
         return <p>Loading........</p>
     }
     if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+        errorElement = <p className='text-red-600'>Error: {error?.message}</p>
     }
 
     return (

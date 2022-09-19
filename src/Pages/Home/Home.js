@@ -6,7 +6,7 @@ import Blogs from './Blogs/Blogs';
 import ContactUs from './ContactUs/ContactUs';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
-import Services from './Services/Services';
+import Subscription from './Subscription/Subscription';
 
 const Home = () => {
     const hoursMinSecs = { days: 29, hours: 24, minutes: 60, seconds: 60 }
@@ -17,9 +17,9 @@ const Home = () => {
             <AboutUs></AboutUs>
             <Blogs></Blogs>
             <ContactUs></ContactUs>
+            <Subscription></Subscription>
             <ComingSoon hoursMinSecs={hoursMinSecs}></ComingSoon>
             <Footer></Footer>
-            {/* <Services></Services> */}
         </div>
     );
 };

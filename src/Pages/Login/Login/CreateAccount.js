@@ -59,16 +59,16 @@ const CreateAccount = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control className='p-2 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="enter password" required />
                         </Form.Group>
-                        <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
-                        <label htmlFor="terms" className={agree ? "text-info ps-2" : "ps-2 text-danger mb-3"}>Accept Electronics Bazzar Terms and Conditions</label>
+                        <input className='ml-2' onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
+                        <label htmlFor="terms" className={agree ? "text-lime-300 ps-2 ml-2" : "ps-2 ml-2 text-red-600 mb-3"}>Accept Mastodon Terms and Conditions</label>
                         <br />
-                        <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto d-block mb-3'>
+                        <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto d-block btn btn-success text-white ml-2'>
                             Register
                         </Button>
                     </Form>
                 </div>
-                <div className='p-2'>
-                    <p>Already have an account? <Link to='/login' className='text-info text-decoration-none ' onClick={navigateLogin}>Please Login</Link></p>
+                <div className='p-2 '>
+                    <p>Already have an account? <Link to='/login' className='text-lime-300 text-decoration-none ' onClick={navigateLogin}>Please Login</Link></p>
                 </div>
             </div>
         </div>
