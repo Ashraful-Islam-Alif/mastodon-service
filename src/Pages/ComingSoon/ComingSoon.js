@@ -29,7 +29,7 @@ const ComingSoon = ({ hoursMinSecs }) => {
         return () => clearInterval(timerId);
     });
     return (
-        <div id='offer' className='text-4xl text-center p-8 font-medium shadow-2xl shadow-green-300/80'>
+        <div id='offer' className='text-4xl text-center p-8 font-medium shadow-lg shadow-gray-300/80'>
             <h2 className='font-bold'><span className='text-rose-500'>Flat</span> <span className='text-emerald-500'>Discount</span></h2>
             <h2 className='text-lg text-amber-600'>Coming Soon</h2>
             <p className='p-4 sm:text-lg lg:text-7xl font-extrabold text-rose-400'>{`
