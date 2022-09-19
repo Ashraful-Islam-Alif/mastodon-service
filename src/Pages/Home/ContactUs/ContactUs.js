@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <div className='container mx-auto p-4'>
+        <div id='contactus' className='container mx-auto p-4'>
             <h1 className="text-4xl font-bold text-center py-8">Contact Us</h1>
             <div data-aos="fade-up"
                 data-aos-duration="3000"

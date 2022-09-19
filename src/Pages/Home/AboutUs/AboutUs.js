@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div className='container mx-auto p-4'>
+        <div id='aboutus' className='container mx-auto p-4'>
             <h2 className='text-center text-4xl font-bold py-8'>About Us</h2>
             <div class="grid  lg:grid-cols-2 gap-4">
                 <div class="grid grid-cols-2  gap-4">

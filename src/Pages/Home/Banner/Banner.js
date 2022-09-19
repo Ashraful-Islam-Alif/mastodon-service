@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 
 const Banner = () => {
     return (
-        <div className='container mx-auto p-4'>
+        <div id='home' className='container mx-auto p-4'>
             <div class="grid  lg:grid-cols-2 gap-4 ">
                 <div data-aos="zoom-in-right"
                     data-aos-offset="200"
