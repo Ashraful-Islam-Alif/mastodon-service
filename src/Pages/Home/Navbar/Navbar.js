@@ -31,7 +31,7 @@ const Navbar = () => {
                         </div>
                     </label>
                 </div>
-                <a className="btn btn-ghost normal-case text-2xl">Mastodon</a>
+                <a className="btn btn-ghost normal-case text-xl md:text-2xl">Mastodon</a>
             </div>
 
             <div className="navbar-center hidden lg:flex">
