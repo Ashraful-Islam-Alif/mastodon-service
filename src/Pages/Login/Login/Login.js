@@ -59,10 +59,10 @@ const Login = () => {
             <div className='flex items-center justify-center flex-col h-screen '>
                 <div style={{
                     backgroundImage: `url("https://i.ibb.co/bbXyXDs/1900901.webp")`
-                }} className='bg-gray-400 shadow-xl rounded-xl py-24 px-5 '>
+                }} className='bg-gray-400 shadow-xl rounded-xl py-24 px-12 '>
                     <Form onSubmit={handleSubmit}>
                         <h2 className='text-center text-4xl font-bold text-white py-6 '>Please Login</h2>
-                        <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">
+                        <Form.Group className="mb-3  p-2 text-black" controlId="formBasicEmail">
                             <Form.Label className='text-white'>Email address</Form.Label>
                             <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
                         </Form.Group>

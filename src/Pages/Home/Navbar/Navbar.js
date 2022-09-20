@@ -20,8 +20,13 @@ const Navbar = () => {
                         <li><a href='/#home'>Home</a></li>
                         <li><a href='/#aboutus'>About Us</a></li>
                         <li><a href='/#testimonials'>Testimonials</a></li>
-                        <li><a href='/#contactus'>Contact Us</a></li>
-                        <li><a href='/#subscription'>Subscription</a></li>
+                        {
+                            user && <li><a href='/#contactus'>Contact Us</a></li>
+                        }
+                        {
+                            user && <li><a href='/#subscription'>Subscription</a></li>
+                        }
+
                         <li><a href='/#offer'>Offers</a></li>
                         <Link className='p-2 ml-2' to='/blog'>Blogs</Link>
                     </ul>
@@ -41,8 +46,12 @@ const Navbar = () => {
                     <li><a href='/#home'>Home</a></li>
                     <li><a href='/#aboutus'>About Us</a></li>
                     <li><a href='/#testimonials'>Testimonials</a></li>
-                    <li><a href='/#contactus'>Contact Us</a></li>
-                    <li><a href='/#subscription'>Subscription</a></li>
+                    {
+                        user && <li><a href='/#contactus'>Contact Us</a></li>
+                    }
+                    {
+                        user && <li><a href='/#subscription'>Subscription</a></li>
+                    }
                     <li><a href='/#offer'>Offers</a></li>
                     <Link className='p-3' to='/blog'>Blogs</Link>
                 </ul>
