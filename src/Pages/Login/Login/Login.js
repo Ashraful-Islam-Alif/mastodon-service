@@ -64,14 +64,14 @@ const Login = () => {
                         <h2 className='text-center text-4xl font-bold text-white py-6 '>Please Login</h2>
                         <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">
                             <Form.Label className='text-white'>Email address</Form.Label>
-                            <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="enter email" required />
+                            <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3 p-2 text-black" controlId="formBasicPassword">
                             <Form.Label className='text-white'>Password</Form.Label>
-                            <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="enter password" required />
+                            <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
                         </Form.Group>
-                        <Button type="submit" className='w-50 mx-auto d-block btn btn-success text-white ml-2 px-32 p-2 mb-3'>
+                        <Button type="submit" className='w-50 mx-auto d-block btn btn-success text-white ml-2 px-28 p-2 mb-3'>
                             Login
                         </Button>
                     </Form>

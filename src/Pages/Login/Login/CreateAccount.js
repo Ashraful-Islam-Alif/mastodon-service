@@ -54,17 +54,17 @@ const CreateAccount = () => {
                     </Form.Group>
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">
                         <Form.Label className='text-white'>Email address</Form.Label>
-                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="enter email" required />
+                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicPassword">
                         <Form.Label className='text-white'>Password</Form.Label>
-                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="enter password" required />
+                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
                     </Form.Group>
                     <input className='ml-2' onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
                     <label htmlFor="terms" className={agree ? "text-white ps-2 ml-2" : "ps-2 ml-2 text-red-600 mb-3"}>Accept Mastodon Terms and Conditions</label>
                     <br />
-                    <Button disabled={!agree} variant="warning" type="submit" className='w-50 my-2 mx-auto d-block btn btn-success text-white ml-2'>
+                    <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto d-block btn btn-success text-white ml-2 px-24 p-2 mb-3'>
                         Register
                     </Button>
                 </Form>

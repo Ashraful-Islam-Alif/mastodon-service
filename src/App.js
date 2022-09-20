@@ -6,7 +6,7 @@ import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
-    <div className='px-11'>
+    <div className=''>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />

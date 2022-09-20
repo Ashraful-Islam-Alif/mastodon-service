@@ -2,9 +2,12 @@ import React from 'react';
 import './Subscription.css'
 const Subscription = () => {
     return (
-        <div id='subscription' className='subscriptionbg'>
-            <div className="hero-content text-center text-neutral-content ">
-                <div className='grid md:grid-cols-2 items-center'>
+        <div id='subscription' className='subscriptionbg container mx-auto py-32 px-8 '>
+            <div data-aos="zoom-in-down"
+                data-aos-offset="200"
+                data-aos-delay="200"
+                data-aos-duration="1500" className="hero-content text-center text-neutral-content ">
+                <div className='grid md:grid-cols-2 items-center justify-items-center shadow-2xl'>
                     <div>
                         <img className='' src="https://i.ibb.co/wRwn1hj/istockphoto-1250077483-170667a.jpg" alt="" srcset="" />
                     </div>
