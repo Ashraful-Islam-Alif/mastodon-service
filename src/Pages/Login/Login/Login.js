@@ -7,6 +7,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Button, Form } from 'react-bootstrap';
 import auth from '../../../firebase.init';
 import './Login.css'
+import Loading from './Loading';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -48,7 +49,7 @@ const Login = () => {
     }
 
     if (loading) {
-        return <p>Loading........</p>
+        return <Loading></Loading>
     }
     if (error) {
         errorElement = <p className='text-red-600'>Error: {error?.message}</p>

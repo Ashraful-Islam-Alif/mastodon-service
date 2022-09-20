@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from './Loading';
 
 
 const CreateAccount = () => {
@@ -24,7 +25,7 @@ const CreateAccount = () => {
         navigate('/login')
     }
     if (loading) {
-        return <p>Loading........</p>
+        return <Loading></Loading>
     }
 
     if (user) {
