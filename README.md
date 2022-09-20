@@ -8,7 +8,7 @@
 -If the user forgets the password he/ she can reset the password by email.
 -Extra features are had that is testimonials. 
 
-###Technology that I used are as follow:
+### Technology that I used are as follow:
 1. React
 2. React-dom
 3. Firebase 
