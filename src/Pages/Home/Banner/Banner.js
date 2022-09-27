@@ -15,7 +15,7 @@ const Banner = () => {
                         <h2 className='sm:text-xl md:text-5xl lg:text-7xl font-bold'><span className='text-[#081c15]'>Fasted Service</span>  <span className='text-[#74c69d]'>Short Time</span> <span className='text-[#081c15]'>Care</span></h2>
                         <p>Mastodon is a one stop vehicle aftersales solution for detailing, maintenance & paperwork. We provide Home/ Pick & Drop service</p>
                         <div>
-                            <button className="btn btn-success  lg:btn-md text-white my-4">Get More Info</button>
+                            <button className="btn btn-outline btn-success  lg:btn-md text-white my-4">Get More Info</button>
                         </div>
                     </div>
                     <div data-aos="zoom-in-left"
@@ -32,7 +32,7 @@ const Banner = () => {
                         data-aos-duration="3000" className="max-w-2xl ">
                         <h2 className='bannerText sm:text-3xl md:text-5xl lg:text-7xl font-bold'><span className='text-rose-500'>Fasted Service</span>  <span className='text-white'>Short Time Care</span></h2>
                         <p className='text-white lg:text-xl py-4'>Mastodon is a one stop vehicle aftersales solution for detailing, maintenance & paperwork. We provide Home/ Pick & Drop service</p>
-                        <button className="btn btn-success  lg:btn-md text-white my-4">Get More Info</button>
+                        <button className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-md px-5 py-2.5 text-center mr-2 mb-2">Get More Info</button>
                     </div>
                 </div>
             </div>

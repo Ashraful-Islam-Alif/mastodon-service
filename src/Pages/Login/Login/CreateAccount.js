@@ -65,7 +65,7 @@ const CreateAccount = () => {
                     <input className='ml-2' onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
                     <label htmlFor="terms" className={agree ? "text-white ps-2 ml-2" : "ps-2 ml-2 text-red-600 mb-3"}>Accept Mastodon Terms and Conditions</label>
                     <br />
-                    <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto d-block btn btn-success text-white ml-2 px-24 p-2 mb-3'>
+                    <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto  ml-2 px-28 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl  py-2.5 text-center mr-2 '>
                         Register
                     </Button>
                 </Form>

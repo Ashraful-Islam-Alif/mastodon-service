@@ -29,20 +29,17 @@ const ComingSoon = ({ hoursMinSecs }) => {
         return () => clearInterval(timerId);
     });
     return (
-        <div id='offer' data-aos="flip-up"
-            data-aos-offset="200"
-            data-aos-delay="200"
-            data-aos-duration="1500" className='container mx-auto py-6 pt-32 px-8'>
+        <div id='offer' className='container mx-auto py-60'>
             <div className=' text-center p-8 font-medium shadow-2xl shadow-gray-300/80 '>
-                <h2 className='text-2xl lg:text-4xl font-bold'><span className='text-rose-500'>Flat</span> <span className='text-emerald-500'>Discount</span></h2>
-                <h2 className='text-lg text-amber-600'>Coming Soon</h2>
-                <p className='p-4 text-2xl sm:text-2xl md:text-3xl lg:text-7xl font-extrabold text-rose-500'>{`
+                <h2 className='text-2xl sm:text-4xl lg:text-6xl font-bold text-center py-8'><span className='text-[#e46161] '>Flat</span> <span className='text-[#cbf078]'>Discount</span></h2>
+                <h2 className='text-2xl text-[#f1b963]'>Coming Soon</h2>
+                <p className='p-4 text-2xl sm:text-2xl md:text-3xl lg:text-7xl font-extrabold text-[#e46161]'>{`
             ${day.toString().padStart(2, '0')}
             :${hrs.toString().padStart(2, '0')}
             :${mins.toString().padStart(2, '0')}
             :${secs.toString().padStart(2, '0')}`}
                 </p>
-                <p className='text-lg daydate sm:text-lg md:text-xl lg:text-2xl lg:pl-4 text-amber-600'><span className='md:pl-2 lg:pr-16'>Day</span> <span className='md:pl-2 lg:pr-14'>Date</span> <span className='md:pl-2 lg:pl-4'>Min</span> <span className='md:pl-2 lg:pl-20'>Sec</span></p>
+                <p className='text-lg daydate sm:text-lg md:text-xl lg:text-2xl lg:pl-4 text-[#f1b963]'><span className='md:pl-2 lg:pr-16'>Day</span> <span className='md:pl-2 lg:pr-14'>Date</span> <span className='md:pl-2 lg:pl-4'>Min</span> <span className='md:pl-2 lg:pl-20'>Sec</span></p>
             </div>
         </div>
     );

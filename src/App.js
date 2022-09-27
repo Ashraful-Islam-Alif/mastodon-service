@@ -7,7 +7,7 @@ import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
-    <div className=''>
+    <div className='bg-lime-100'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
