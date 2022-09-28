@@ -45,7 +45,7 @@ const Navbar = () => {
                         </div>
                     </label>
                 </div>
-                <a href='/#home' className=" hover:text-lime-300 hover:bg-none normal-case text-xl md:text-2xl ml-3 font-bold">Mastodon</a>
+                <a href='/#home' className=" hover:text-[#94ca21cf] hover:bg-none normal-case text-xl md:text-2xl ml-3 font-bold">Mastodon</a>
             </div>
 
 

@@ -12,6 +12,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Testimonials from './Testimonials/Testimonials';
 import HomeBanner from './HomeBanner/HomeBanner';
 import OurCustomers from './OurCustomers/OurCustomers';
+import Awards from './Awards/Awards';
+import FAQ from './Awards/FAQ/FAQ';
 const Home = () => {
     const hoursMinSecs = { days: 29, hours: 24, minutes: 60, seconds: 60 }
     const [user] = useAuthState(auth)
@@ -28,7 +30,8 @@ const Home = () => {
             {
                 user && <Subscription></Subscription>
             }
-
+            <FAQ></FAQ>
+            <Awards></Awards>
             <ComingSoon hoursMinSecs={hoursMinSecs}></ComingSoon>
             <OurCustomers></OurCustomers>
             <Footer></Footer>
