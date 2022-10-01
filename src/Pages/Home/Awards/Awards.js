@@ -27,28 +27,29 @@ const Awards = () => {
                     modifier: 1,
                     slideShadows: true,
                 }}
+
                 modules={[EffectCoverflow, Pagination]}
                 className="mySwiper"
             >
                 <SwiperSlide className="p-6 mb-20">
                     <img src="https://i.ibb.co/GPSXjvV/awards1.jpg" />
-                    <h2 className="text-center text-2xl font-bold pt-4">Bangabandhu Innovation Grant Award 2020</h2>
+                    <h2 className="text-center text-2xs md:text-2xl font-bold pt-4">Bangabandhu Innovation Grant Award 2020</h2>
                 </SwiperSlide>
                 <SwiperSlide className="p-6 mb-20">
                     <img src="https://i.ibb.co/tXVmShd/awards2.png" />
-                    <h2 className="text-center text-3xl font-bold pt-4">Entrepreneirs' Organization</h2>
+                    <h2 className="text-center text-2xs md:text-2xl font-bold pt-4">Entrepreneirs' Organization</h2>
                 </SwiperSlide>
                 <SwiperSlide className="p-20 mb-20">
                     <img src="https://i.ibb.co/vkQ1px0/awards3.png" />
-                    <h2 className="text-center text-3xl font-bold pt-4">ICT Division</h2>
+                    <h2 className="text-center text-2xs md:text-2xl font-bold pt-4">ICT Division</h2>
                 </SwiperSlide>
                 <SwiperSlide className="p-24 mb-20">
                     <img src="https://i.ibb.co/TgSKG6P/awards4.png" />
-                    <h2 className="text-center text-3xl font-bold pt-4">Innovation Design and Entreprenuurship Academy</h2>
+                    <h2 className="text-center text-2xs md:text-2xl font-bold pt-4">Innovation Design and Entreprenuurship Academy</h2>
                 </SwiperSlide>
                 <SwiperSlide className="p-6 mb-24">
                     <img src="https://i.ibb.co/z2GR8ZV/awards5.jpg" />
-                    <h2 className="text-center text-3xl font-bold pt-4">Top 10, National Finalist, Microsoft Young Bangla Summit 2018</h2>
+                    <h2 className="text-center text-2xs md:text-2xl font-bold pt-4">Top 10, National Finalist, Microsoft Young Bangla Summit 2018</h2>
                 </SwiperSlide>
 
             </Swiper>
