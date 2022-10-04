@@ -10,25 +10,19 @@ const Navbar = () => {
         signOut(auth);
     }
     return (
-        <div className="navbar sticky z-50 top-0  bg-[#f8f398] bg-opacity-50">
+        <div className="navbar sticky z-50 top-0  bg-gray-200 bg-opacity-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#home'>Home</a></li>
-                        <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#aboutus'>About Us</a></li>
-                        <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#testimonials'>Testimonials</a></li>
-                        {
-                            user && <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#contactus'>Contact Us</a></li>
-                        }
-                        {
-                            user && <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#subscription'>Subscription</a></li>
-                        }
-
-                        <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#offer'>Offers</a></li>
-                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl' to='/blog'>Blogs</Link>
+                        <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><a href='/#home'>Home</a></li>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>AboutUs</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>Buy a Car</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>Spare Parts</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Services</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
                         <li>
                             {user ?
                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] rounded-xl text-md px-5 py-2.5 text-center mr-2 mb-2 ml-2" onClick={handleSignOut}>SignOut</button>
@@ -45,23 +39,21 @@ const Navbar = () => {
                         </div>
                     </label>
                 </div>
-                <a href='/#home' className=" hover:text-[#94ca21cf] hover:bg-none normal-case text-xl md:text-2xl ml-3 font-bold">Mastodon</a>
+                <div className='flex flex-col'>
+                    <a href='/#home' className="hover:bg-none normal-case text-xl md:text-2xl ml-3 font-bold text-[#006a4e]">Mastodon</a>
+                    <a href='/#home' className="hover:bg-none normal-case text-xs md:text-sm ml-3 font-sans text-[#006a4e]">Automobile Marketplace</a>
+                </div>
             </div>
 
 
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 " >
-                    <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#home'>Home</a></li>
-                    <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#aboutus'>AboutUs</a></li>
-                    <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#testimonials'>Testimonials</a></li>
-                    {
-                        user && <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#contactus'>ContactUs</a></li>
-                    }
-                    {
-                        user && <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#subscription'>Subscription</a></li>
-                    }
-                    <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl'><a href='/#offer'>Offers</a></li>
-                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl' to='/blog'>Blogs</Link>
+                    <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><a href='/#home'>Home</a></li>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>About</Link>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>BuyACar</Link>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>SpareParts</Link>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Services</Link>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
                 </ul>
                 {user ?
                     <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] rounded-xl font-medium  text-md px-5 py-2.5 text-center mr-2 mb-2 mt-2" onClick={handleSignOut}>SignOut</button>

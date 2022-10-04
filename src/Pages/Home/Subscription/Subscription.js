@@ -9,11 +9,11 @@ const Subscription = () => {
                 data-aos-duration="1500" className="hero-content text-center text-neutral-content ">
                 <div className='grid md:grid-cols-2 items-center justify-items-center shadow-2xl p-4'>
                     <div>
-                        <img className='' src="https://i.ibb.co/wRwn1hj/istockphoto-1250077483-170667a.jpg" alt="" srcset="" />
+                        <img className='' src="https://i.ibb.co/CmKdFms/istockphoto-1250077483-170667a.png" alt="" srcset="" />
                     </div>
                     <div className="max-w-lg ">
-                        <h1 className="mb-5 px-10 text-3xl md:text-5xl font-bold text-[#e46161]">SUBSCRIBE</h1>
-                        <p className="mb-5 text-[#f1b963]">Subscribe to our newsletter & stay updated.</p>
+                        <h1 className="mb-5 px-10 text-3xl md:text-5xl font-bold text-[#006a4e]">SUBSCRIBE</h1>
+                        <p className="mb-5 text-[#000]">Subscribe to our newsletter & stay updated.</p>
                         <div className='flex justify-items-center p-2 m-3'>
                             <div className='grid md:grid-cols-2 gap-4'>
                                 <input type="email" placeholder="Your Email" className="input input-bordered w-full max-w-xs  text-black" />

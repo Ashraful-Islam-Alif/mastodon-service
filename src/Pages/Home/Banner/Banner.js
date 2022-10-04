@@ -25,14 +25,22 @@ const Banner = () => {
                     ><figure><img className="shadow-lg shadow-gray-300/80" src="https://i.ibb.co/QYTHfH1/close-up-hands-unrecognizable-mechanic-doing-car-service-maintenance-146671-19689.jpg" alt="Album" /></figure></div>
                 </div>
             </div> */}
-            <div className="hero min-h-screen " style={{ backgroundImage: `url("https://i.ibb.co/QYTHfH1/close-up-hands-unrecognizable-mechanic-doing-car-service-maintenance-146671-19689.jpg")` }}>
-                <div className="hero-overlay bg-opacity-40"></div>
+            <div className="hero min-h-screen " style={{ backgroundImage: `url("https://i.ibb.co/3dqSZBQ/bg.jpg")`, backgroundPosition: 'left top' }}>
+                <div className="hero-overlay bg-opacity-50"></div>
                 <div className="hero-content text-center text-neutral-content">
-                    <div data-aos="fade-up"
-                        data-aos-duration="3000" className="max-w-2xl ">
-                        <h2 className='bannerText sm:text-3xl md:text-5xl lg:text-7xl font-bold'><span className='text-rose-500'>Fasted Service</span>  <span className='text-white'>Short Time Care</span></h2>
-                        <p className='text-white lg:text-xl py-4'>Mastodon is a one stop vehicle aftersales solution for detailing, maintenance & paperwork. We provide Home/ Pick & Drop service</p>
-                        <button className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-md px-5 py-2.5 text-center mr-2 mb-2">Get More Info</button>
+                    <div className='max-w-md'>
+                        <h2 className='text-gray-300 text-2xl md:text-3xl lg:text-8xl font-semibold'>MASTODON</h2>
+                        <div className="btn-group btn-group-vertical">
+                            <button data-aos="fade-right"
+                                data-aos-easing="linear"
+                                data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2">Spare Parts </button>
+                            <button data-aos="fade-right"
+                                data-aos-easing="linear"
+                                data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2">Services</button>
+                            <button data-aos="fade-right"
+                                data-aos-easing="linear"
+                                data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2"> Buy a car</button>
+                        </div>
                     </div>
                 </div>
             </div>

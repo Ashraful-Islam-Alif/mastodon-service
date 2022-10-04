@@ -14,26 +14,30 @@ import HomeBanner from './HomeBanner/HomeBanner';
 import OurCustomers from './OurCustomers/OurCustomers';
 import Awards from './Awards/Awards';
 import FAQ from './Awards/FAQ/FAQ';
+import MastodonInfo from './MastodonInfo/MastodonInfo';
+import Counter from './Counter/Counter';
 const Home = () => {
     const hoursMinSecs = { days: 29, hours: 24, minutes: 60, seconds: 60 }
     const [user] = useAuthState(auth)
     return (
         <div>
             <Navbar></Navbar>
-            <HomeBanner></HomeBanner>
-            {/* <Banner></Banner> */}
-            <AboutUs></AboutUs>
+            <Banner></Banner>
+            <MastodonInfo></MastodonInfo>
+            <Counter></Counter>
+            <OurCustomers></OurCustomers>
             <Testimonials></Testimonials>
+            <FAQ></FAQ>
+            {/* <HomeBanner></HomeBanner> */}
+            {/* <AboutUs></AboutUs> */}
             {
                 user && <ContactUs></ContactUs>
             }
             {
                 user && <Subscription></Subscription>
             }
-            <FAQ></FAQ>
-            <Awards></Awards>
-            <ComingSoon hoursMinSecs={hoursMinSecs}></ComingSoon>
-            <OurCustomers></OurCustomers>
+            {/* <Awards></Awards> */}
+            {/* <ComingSoon hoursMinSecs={hoursMinSecs}></ComingSoon> */}
             <Footer></Footer>
         </div>
     );

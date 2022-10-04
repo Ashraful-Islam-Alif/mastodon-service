@@ -38,10 +38,10 @@
     perspective: 100px;
 }
 
-img {
+.slide img {
     width: 100%;
     transition: transform 1%;
-    filter: contrast(80%);
+    filter: contrast(170%);
 }
 
 img:hover {
