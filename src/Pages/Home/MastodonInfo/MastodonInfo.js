@@ -21,7 +21,7 @@ const MastodonInfo = () => {
                         <CalendarDaysIcon className="h-12 w-24 md:h-24 md:w-24 text-[#99ca3fc4]" />
                     </div>
                     <div>
-                        <p className='text-md md:text-xl p-4'>Schedule Your car Wash</p>
+                        <p className='text-md md:text-xl p-4 text-center'>Select Your Product/Services</p>
                     </div>
                 </div>
                 <div className='flex flex-col items-center bg-gray-200 p-12 m-8 rounded-2xl shadow-2xl lg:h-72 lg:w-96'>
