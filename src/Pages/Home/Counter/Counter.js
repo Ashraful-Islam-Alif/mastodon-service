@@ -17,7 +17,7 @@ const Counter = () => {
             <div className="container mx-auto  ">
                 <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center">
                     <div>
-                        <div className="text-xl md:text-2xl lg:text-4xl text-[#006a4e] font-bold  mt-3">
+                        <div className="text-xl md:text-2xl lg:text-5xl text-[#006a4e] font-bold  mt-3">
                             <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                                 {({ isVisible }) => (
                                     <div style={{ height: 30 }}>
@@ -36,7 +36,7 @@ const Counter = () => {
                     </div>
 
                     <div>
-                        <div className="text-xl md:text-2xl lg:text-4xl text-[#006a4e] font-bold  mt-3">
+                        <div className="text-xl md:text-2xl lg:text-5xl text-[#006a4e] font-bold  mt-3">
                             <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                                 {({ isVisible }) => (
                                     <div style={{ height: 30 }}>
@@ -55,7 +55,7 @@ const Counter = () => {
                     </div>
                     <div>
                         <div>
-                            <h5 className="text-xl md:text-2xl lg:text-4xl  text-[#006a4e] font-bold  mt-3">
+                            <h5 className="text-xl md:text-2xl lg:text-5xl  text-[#006a4e] font-bold  mt-3 ">
                                 <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                                     {({ isVisible }) => (
                                         <div style={{ height: 30 }}>

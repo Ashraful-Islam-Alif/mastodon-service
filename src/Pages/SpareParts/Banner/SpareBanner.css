@@ -1,0 +1,8 @@
+.sparebanner {
+    padding-bottom: 155px;
+    clip-path:
+        polygon(0% 0%,
+            100% 0%,
+            100% calc(100% - 155px),
+            0% 100%);
+}

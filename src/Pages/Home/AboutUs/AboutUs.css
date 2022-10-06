@@ -9,14 +9,14 @@
 
 .aboutus::before {
     content: ' ';
-    background-image: url('./muscular-car-service-worker-repairing-vehicle.jpg');
+    /* background-image: url('./muscular-car-service-worker-repairing-vehicle.jpg'); */
     background-size: cover;
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .atext {
