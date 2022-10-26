@@ -10,7 +10,7 @@ const Testimonials = () => {
 
                 <div className=" p-4 m-4 shadow-gray-300/80 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 bg-gray-100 rounded-xl shadow-2xl">
                     <div className='flex flex-col justify-center items-center'>
-                        <img className='w-24 rounded-full ' src="https://mastodon-tech.github.io/Mastodonwash-v1.0.1/assets/img/testimonials/Tanvir.jpeg" />
+                        <img className='w-24 rounded-full ' src="https://mastodon-tech.github.io/Mastodonwash-v1.0.1/assets/img/testimonials/Shamsil.jpeg" />
                         <h2 className=' font-bold py-4'>Shamsil Arefin</h2>
                     </div>
                     <div className="rating">
@@ -24,8 +24,8 @@ const Testimonials = () => {
                 </div>
                 <div className="p-4 m-4 shadow-gray-300/80 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 bg-gray-100 rounded-xl shadow-2xl">
                     <div className='flex flex-col justify-center items-center'>
-                        <img className='w-24 rounded-full ' src="https://mastodon-tech.github.io/Mastodonwash-v1.0.1/assets/img/testimonials/Shamsil.jpeg" />
-                        <h2 className=' font-bold py-4'>Isha Khan</h2>
+                        <img className='w-24 rounded-full ' src="https://mastodon-tech.github.io/Mastodonwash-v1.0.1/assets/img/testimonials/Tanvir.jpeg" />
+                        <h2 className=' font-bold py-4'>Tanvir Tabassum Ovi</h2>
                     </div>
                     <div className="rating">
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#99ca3fc4]" />

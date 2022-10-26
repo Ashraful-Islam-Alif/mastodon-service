@@ -10,7 +10,7 @@ const Navbar = () => {
         signOut(auth);
     }
     return (
-        <div className="navbar sticky z-50 top-0  bg-gray-200 bg-opacity-50">
+        <div className="navbar sticky z-50 top-0  bg-gray-200 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
