@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsFacebook } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='bg-gray-200 bg-opacity-50'>
@@ -37,12 +38,14 @@ const Footer = () => {
                     <div class="grid grid-rows-3 grid-flow-col gap-4">
                         <div class="row-span-3 "><img src="https://i.ibb.co/ZdD70pG/recentpost1.jpg" alt="" srcset="" /></div>
                         <div class="col-span-2"><span><small><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 16 2022</small></span></div>
-                        <div class="row-span-2 col-span-2 hover:text-[#99ca3f] font-bold"><a href=''><span>Substainable strategic </span><br /><span>theme areas</span></a></div>
+                        <Link class="row-span-2 col-span-2 hover:text-[#99ca3f] font-bold"><a href='/blog'><span>Substainable strategic </span><br /><span>theme areas</span></a></Link>
+
                     </div>
                     <div class="grid grid-row3-3 grid-flow-col gap-4">
                         <div class="row-span-3"><img src="https://i.ibb.co/9Vxf2fg/recentpost2.jpg" alt="" srcset="" /></div>
                         <div class="col-span-2"><span><small><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 16 2022</small></span></div>
-                        <div class="row-span-2 col-span-2 hover:text-[#99ca3f] font-bold"><a href=''><span>Objectively excellent </span><br /><span>scenarios attempt</span></a></div>
+                        {/* <div class="row-span-2 col-span-2 hover:text-[#99ca3f] font-bold"><a href=''><span>Objectively excellent </span><br /><span>scenarios attempt</span></a></div> */}
+                        <Link to='/blog' class="row-span-2 col-span-2 hover:text-[#99ca3f] font-bold"><span>Objectively excellent </span><br /><span>scenarios attempt</span></Link>
                     </div>
                 </div>
                 <div>

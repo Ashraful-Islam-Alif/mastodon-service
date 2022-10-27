@@ -23,6 +23,7 @@ function App() {
           (<div className='bg-gray-300'>
             <Routes >
               <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
               <Route path='/spareParts' element={<SpareParts></SpareParts>}></Route>
               <Route path='/buyCar' element={<BuyCar></BuyCar>}></Route>

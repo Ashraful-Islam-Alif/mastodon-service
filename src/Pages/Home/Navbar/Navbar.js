@@ -17,11 +17,11 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><a href='/#home'>Home</a></li>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/home'>Home</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>AboutUs</Link>
-                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>Buy a Car</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>Spare Parts</Link>
-                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Services</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Mechanics</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>Garages</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
                         <li>
                             {user ?
@@ -48,11 +48,19 @@ const Navbar = () => {
 
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 " >
-                    <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><a href='/#home'>Home</a></li>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/home'>Home</Link>
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>About</Link>
-                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>BuyACar</Link>
+                    <button className=' dropdown dropdown-hover dropdown-center'>
+                        <label tabIndex={0} className="p-3 mr-2  hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]">Services</label>
+                        <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-box w-52 text-start p-4 mt-2">
+                            <Link to='/spareParts' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] p-2'>SpareParts </Link>
+                            <Link to='/service' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] p-2'>Mechanics</Link>
+                            <Link to='/buyCar' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] p-2'>Garages</Link>
+                        </ul>
+                    </button>
+                    {/* <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>BuyACar</Link>
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>SpareParts</Link>
-                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Services</Link>
+                    <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Services</Link> */}
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
                 </ul>
                 {user ?
