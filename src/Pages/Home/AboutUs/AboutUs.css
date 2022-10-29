@@ -24,3 +24,14 @@
     line-height: 0.9;
     text-align: center;
 } */
+.aboutAnimation {
+    width: 300px;
+    height: 300px;
+    transform: translateY(-80px);
+    transition: all 1.5s linear;
+}
+
+.aboutAnimation2 {
+    transform: translatex(170px);
+    transition: all 1.5s linear;
+}

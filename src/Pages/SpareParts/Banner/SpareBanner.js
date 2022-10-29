@@ -2,12 +2,14 @@ import React from 'react';
 import Navbar from '../../Home/Navbar/Navbar';
 import SearchBox from '../Searchbox/SearchBox';
 import './SpareBanner.css'
+import UpperBanner from './UpperBanner';
 
 const SpareBanner = () => {
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
             <SearchBox></SearchBox>
+            <UpperBanner></UpperBanner>
             <div className='container mx-auto  px-8 py-24 '>
                 <div data-aos="fade-up"
                     data-aos-duration="2000"
@@ -47,12 +49,15 @@ const SpareBanner = () => {
                                     <input type="text" placeholder="Address" className="input input-bordered" />
                                 </div>
                                 <select className="select select-bordered w-full max-w-xs font-normal">
-                                    <option disabled selected>Which brand do you prefer?</option>
-                                    <option>Suzuki</option>
-                                    <option>Hyundai</option>
-                                    <option>Honda</option>
-                                    <option>Tata</option>
-                                    <option>Ford</option>
+                                    <option disabled selected>Which Spare Parts do you prefer?</option>
+                                    <option>Brakes & Suspension</option>
+                                    <option>Body Parts & Mirror</option>
+                                    <option>Car Lights</option>
+                                    <option>Car Lights</option>
+                                    <option>Engine & Drive</option>
+                                    <option>Electronic Parts</option>
+                                    <option>Filter</option>
+                                    <option>Car Accessories</option>
                                 </select>
                                 <select className="select select-bordered w-full max-w-xs font-normal">
                                     <option disabled selected>Parts Name</option>
