@@ -5,7 +5,7 @@ const Testimonials = () => {
 
 
         <div id='testimonials' className='container mx-auto py-32 px-8'>
-            <h2 className='text-[#006a4e] text-center text-2xl sm:text-4xl lg:text-6xl font-bold py-8'>Testimonials</h2>
+            <h2 className='text-[#006a4e] container mx-auto text-2xl sm:text-4xl lg:text-6xl font-bold py-8'>Testimonials</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-4 '>
 
                 <div className=" p-4 m-4 shadow-gray-300/80 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 bg-gray-100 rounded-xl shadow-2xl">

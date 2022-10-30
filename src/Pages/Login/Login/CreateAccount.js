@@ -43,10 +43,12 @@ const CreateAccount = () => {
         navigate('/')
     }
     return (
-        <div className='flex items-center justify-center flex-col h-screen '>
+        <div style={{
+            backgroundImage: `url("https://i.ibb.co/KDhVqRG/HMD4dj.webp")`
+        }} className='flex items-center justify-center flex-col h-screen '>
             <div style={{
-                backgroundImage: `url("https://i.ibb.co/bbXyXDs/1900901.webp")`
-            }} className='bg-gray-400 shadow-xl rounded-xl py-20 px-5 '>
+                backgroundImage: `url("https://i.ibb.co/KDhVqRG/HMD4dj.webp")`
+            }} className='bg-gray-200 shadow-xl rounded-xl py-20 px-5 '>
                 <Form onSubmit={handleSubmit}>
                     <h2 className='text-center text-4xl font-bold text-white py-4'>Create Account</h2>
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">

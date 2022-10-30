@@ -16,6 +16,7 @@ import Awards from './Awards/Awards';
 import FAQ from './Awards/FAQ/FAQ';
 import MastodonInfo from './MastodonInfo/MastodonInfo';
 import Counter from './Counter/Counter';
+import OurServices from './OurServices/OurServices';
 const Home = () => {
     const hoursMinSecs = { days: 29, hours: 24, minutes: 60, seconds: 60 }
     const [user] = useAuthState(auth)
@@ -25,6 +26,7 @@ const Home = () => {
             <Banner></Banner>
             <MastodonInfo></MastodonInfo>
             <Counter></Counter>
+            <OurServices></OurServices>
             <OurCustomers></OurCustomers>
             <Testimonials></Testimonials>
             <FAQ></FAQ>

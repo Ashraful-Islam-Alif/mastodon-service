@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
-            <SearchBox></SearchBox>
+            {/* <SearchBox></SearchBox> */}
             <div className='container mx-auto  px-8 py-24 '>
                 <div data-aos="fade-up"
                     data-aos-duration="2000"

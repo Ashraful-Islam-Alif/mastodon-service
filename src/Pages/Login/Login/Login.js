@@ -56,10 +56,12 @@ const Login = () => {
     }
 
     return (
-        <div className=''>
+        <div style={{
+            backgroundImage: `url("https://i.ibb.co/KDhVqRG/HMD4dj.webp")`
+        }} className=''>
             <div className='flex items-center justify-center flex-col h-screen '>
                 <div style={{
-                    backgroundImage: `url("https://i.ibb.co/bbXyXDs/1900901.webp")`
+                    backgroundImage: `url("https://i.ibb.co/KDhVqRG/HMD4dj.webp")`
                 }} className='bg-gray-400 shadow-xl rounded-xl py-24 px-12 '>
                     <Form onSubmit={handleSubmit}>
                         <h2 className='text-center text-4xl font-bold text-white py-6 '>Please Login</h2>

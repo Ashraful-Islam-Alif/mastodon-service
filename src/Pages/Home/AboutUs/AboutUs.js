@@ -25,10 +25,10 @@ const AboutUs = () => {
                         <Navbar></Navbar>
                         <div className='aboutus '>
 
-                            <div className='grid grid-cols-2 gap-4 p-8 m-4 '>
+                            <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 p-8 m-4 '>
                                 <div><p className='text-[#006a4e] font-bold'>More About Us</p>
-                                    <h2 className='text-lg lg:text-3xl text-black font-medium my-6'>One stop vehicle aftersales solution for spare parts, maintenance & vehicle trading</h2>
-                                    <p className=''>Mastodon is an online platform that connects the car users to design their car maintenance plan, purchase commodities, schedule service at their door everything altogether. Mastodon offers all kinds of vehicle maintenance support connecting skilled garages that meets the customer standards. In addition, Mastodon sources the most authentic spare parts and accessories from around the world. Our simplified technical solutions predict most reasonable price keeping our standards to a globally competitive level.</p>
+                                    <h2 className='text-lg lg:text-3xl text-black font-medium my-6 text-justify'>One stop vehicle aftersales solution for spare parts, maintenance & vehicle trading</h2>
+                                    <p className='text-justify'>Mastodon is an online platform that connects the car users to design their car maintenance plan, purchase commodities, schedule service at their door everything altogether. Mastodon offers all kinds of vehicle maintenance support connecting skilled garages that meets the customer standards. In addition, Mastodon sources the most authentic spare parts and accessories from around the world. Our simplified technical solutions predict most reasonable price keeping our standards to a globally competitive level.</p>
                                     <div className='my-12'>
                                         <ul>
                                             <li className=''><span className='text-[#006a4e]'>•</span> Spare Parts & Accessories</li>
@@ -38,10 +38,10 @@ const AboutUs = () => {
                                         </ul>
                                     </div></div>
                                 <div className='grid grid-cols-2 gap-4'>
-                                    <div className='flex items-center mx-52 z-20'>
-                                        <div className='w-72 h-20 bg-[#006a4e] p-4 text-white text-ellipsis  '>
+                                    <div className='flex items-center md:mx-52 lg:mx-52 md:z-20 lg:z-20'>
+                                        <div className='w-48 h-16 md:w-48 md:h-16  lg:w-72 lg:h-20 bg-[#006a4e] p-4 text-white text-ellipsis  '>
                                             <div className='grid grid-rows-2 grid-flow-col gap-4'>
-                                                <div className='row-span-2 text-5xl'>
+                                                <div className='row-span-2 text-xl md:text-3xl lg:text-5xl'>
                                                     {/* <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                                                         {({ isVisible }) => (
                                                             <div style={{ height: 30 }}>
@@ -51,7 +51,7 @@ const AboutUs = () => {
                                                     </VisibilitySensor> */}
                                                     <h2>4</h2>
                                                 </div>
-                                                <div className='col-span-1 m-0 p-0'><span>YEARS OF </span><span>EXPERIENCES</span></div>
+                                                <div className='col-span-1 m-0 p-0 text-sm'><span>YEARS OF </span><span>EXPERIENCES</span></div>
                                             </div>
 
                                         </div>

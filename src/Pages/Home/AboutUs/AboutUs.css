@@ -24,6 +24,8 @@
     line-height: 0.9;
     text-align: center;
 } */
+
+/* __________________________________________________ */
 .aboutAnimation {
     width: 300px;
     height: 300px;
@@ -31,7 +33,62 @@
     transition: all 1.5s linear;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .aboutAnimation {
+        width: 300px;
+        height: 300px;
+        transform: translateY(-40px);
+        transition: all 1.5s linear;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .aboutAnimation {
+        width: 300px;
+        height: 300px;
+        transform: translateY(-60px);
+        transition: all 1.5s linear;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .aboutAnimation {
+        width: 300px;
+        height: 300px;
+        transform: translateY(-70px);
+        transition: all 1.5s linear;
+    }
+}
+
+/* _______________________________________________________ */
 .aboutAnimation2 {
-    transform: translatex(170px);
+    transform: translatex(100px);
     transition: all 1.5s linear;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .aboutAnimation2 {
+        transform: translatex(30px);
+        transition: all 1.5s linear;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .aboutAnimation2 {
+        transform: translatex(50px);
+        transition: all 1.5s linear;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .aboutAnimation2 {
+        transform: translatex(50px);
+        transition: all 1.5s linear;
+    }
 }
