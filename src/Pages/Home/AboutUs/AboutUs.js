@@ -31,10 +31,16 @@ const AboutUs = () => {
                                     <p className='text-justify'>Mastodon is an online platform that connects the car users to design their car maintenance plan, purchase commodities, schedule service at their door everything altogether. Mastodon offers all kinds of vehicle maintenance support connecting skilled garages that meets the customer standards. In addition, Mastodon sources the most authentic spare parts and accessories from around the world. Our simplified technical solutions predict most reasonable price keeping our standards to a globally competitive level.</p>
                                     <div className='my-12'>
                                         <ul>
-                                            <li className=''><span className='text-[#006a4e]'>•</span> Spare Parts & Accessories</li>
-                                            <li className=''><span className='text-[#006a4e]'>•</span> Garages</li>
-                                            <li className=''><span className='text-[#006a4e]'>•</span> Mechanics</li>
-                                            <li className=''><span className='text-[#006a4e]'>•</span> Buy a Car</li>
+                                            <div className='grid grid-cols-2 justify-center gap-4'>
+                                                <div>
+                                                    <li className=''><span className='text-[#006a4e]'>•</span> Spare Parts & Accessories</li>
+                                                    <li className=''><span className='text-[#006a4e]'>•</span> Garages</li>
+                                                </div>
+                                                <div>
+                                                    <li className=''><span className='text-[#006a4e]'>•</span> Mechanics</li>
+                                                    <li className=''><span className='text-[#006a4e]'>•</span> Buy a Car</li>
+                                                </div>
+                                            </div>
                                         </ul>
                                     </div></div>
                                 <div className='grid grid-cols-2 gap-4'>

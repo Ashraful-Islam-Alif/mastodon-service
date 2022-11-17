@@ -50,8 +50,8 @@ img:hover {
 
 .slider-wrapper::before,
 .slider-wrapper::after {
-    background: linear-gradient(to right, hsl(0, 0%, 98%),
-            rgba(255, 255, 255, 0) 100%);
+    /* background: linear-gradient(to right, hsl(0, 0%, 98%),
+            rgba(255, 255, 255, 0) 100%); */
     content: '';
     height: 100%;
     position: absolute;

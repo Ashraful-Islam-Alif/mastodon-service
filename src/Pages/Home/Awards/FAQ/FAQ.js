@@ -2,9 +2,9 @@ import React from 'react';
 
 const FAQ = () => {
     return (
-        <div className=''>
+        <div className='container mx-auto px-8'>
             <h2 className='text-[#006a4e] container mx-auto text-2xl sm:text-4xl md:text-4xl lg:text-6xl font-bold py-4'>FREQUENTLY ASKED QUESTIONS</h2>
-            <div className='container mx-auto py-20 md:px-20'>
+            <div className=''>
                 <div tabIndex={0} className="collapse collapse-arrow bg-base-200 rounded-box m-4">
                     <div className="collapse-title text-xs md:text-lg font-medium ">
                         How do I order?

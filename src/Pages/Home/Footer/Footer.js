@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <span class="font-bold text-[#006a4e]">Contact Info</span>
-                    <p><span className='font-bold'>Email:</span> ceo@mastodonbd.com</p>
+                    <p><span className='font-bold'>Email:</span> info@mastodonbd.com</p>
                     <p><span className='font-bold'>Mobile No. :</span> +8801710684938, +8801810172434</p>
                     <span class="font-bold text-[#006a4e]">We are Available</span>
                     <p><span className='font-bold'>Working Day:</span> 6 days per week</p>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const OurServices = () => {
     return (
-        <div className='container mx-auto '>
+        <div className='container mx-auto px-8'>
             <h2 className='text-[#006a4e] container mx-auto text-2xl sm:text-4xl lg:text-6xl font-bold py-8'>Our Services</h2>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 px-8'>
                 <div

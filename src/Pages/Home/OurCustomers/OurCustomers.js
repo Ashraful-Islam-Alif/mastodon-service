@@ -3,7 +3,7 @@ import './OurCustomers.css'
 
 const OurCustomers = () => {
     return (
-        <div className=''>
+        <div className='container mx-auto px-8'>
             <h2 className='text-[#006a4e] container mx-auto text-2xl sm:text-4xl lg:text-6xl font-bold py-8'>Our Customers</h2>
             <div class="slider-wrapper  overflow-hidden">
                 <div class="slider-track row gx-5">
