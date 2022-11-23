@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Select from "react-select";
+import { useForm, Controller } from "react-hook-form";
+import Input from "@material-ui/core/Input";
 import Navbar from '../../../Pages/Home/Navbar/Navbar';
 import SearchBox from '../../../Pages/SpareParts/Searchbox/SearchBox';
-
+import { useState } from "react";
 const Banner = () => {
+    const { control } = useForm({
+        defaultValues: {
+            firstName: '',
+            select: {}
+        }
+    });
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('gmail', 'template_l0m2ihs', form.current, '_88G7qWVLDpe81zAy')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        e.target.reset();
+    };
+
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
@@ -19,48 +42,44 @@ const Banner = () => {
                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center">Request Brochure</button>
                             </div>
                         </div>
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                            <div className="card-body">
-                                <div className="form-control">
-                                    <input type="text" placeholder="Full name" className="input input-bordered" />
-                                </div>
-                                <div className="form-control">
-                                    <input type="text" placeholder="email" className="input input-bordered" />
-                                </div>
-                                <div className="form-control">
-                                    <input type="number" placeholder="Phone number" className="input input-bordered" />
-                                </div>
-                                <div className="form-control">
-                                    <input type="text" placeholder="Address" className="input input-bordered" />
-                                </div>
-                                <select className="select select-bordered w-full max-w-xs font-normal">
-                                    <option disabled selected>Select your Car Type</option>
-                                    <option>Small Sedan / Private Car</option>
-                                    <option>Large Sedan/SUV/Hiace</option>
+                        <div >
+                            <form className='grid grid-rows-4 gap-4' ref={form} onSubmit={sendEmail}>
+                                <label>Name</label>
+                                <input className='border' type="text" name="name" />
+                                <label>Email</label>
+                                <input className='border' type="email" name="email" />
+                                <label>Message</label>
+                                <Controller
+                                    name="select"
+                                    control={control}
+                                    render={({ field }) => <Select
+                                        {...field}
+                                        options={[
+                                            { value: "chocolate", label: "Chocolate" },
+                                            { value: "strawberry", label: "Strawberry" },
+                                            { value: "vanilla", label: "Vanilla" }
+                                        ]}
+                                    />}
+                                />
+                                <textarea name="message" />
+                                <input className='border cursor-pointer bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center text-white' type="submit" value="Send" />
+                            </form>
+
+                            {/* ___________________________________________________________ */}
+
+                            {/* <form className='grid grid-rows-4 gap-4' handleSubmit={onSubmit}>
+
+                                <input {...register("firstName")} placeholder="First name" type="text" name="name" />
+                                <input {...register("email")} placeholder="Email" type="email" name="email" />
+                                <select {...register("category", { required: true })}>
+                                    <option value="">Select...</option>
+                                    <option value="A">Option A</option>
+                                    <option value="B">Option B</option>
                                 </select>
-                                <select className="select select-bordered w-full max-w-xs font-normal">
-                                    <option disabled selected>Select Your Service</option>
-                                    <option>Economy - 1000 BDT </option>
-                                    <option>Premium (Best Seller) - 2000 BDT</option>
-                                    <option>Elite - 4000 BDT</option>
-                                </select>
-                                <select className="select select-bordered w-full max-w-xs font-normal">
-                                    <option disabled selected>Add Ons</option>
-                                    <option>Waterless Engine Bay - 1000 BDT </option>
-                                    <option>Interior Deep Clean - 2000 BDT</option>
-                                    <option>All Glass Clean - 1500 BDT</option>
-                                    <option>Tyre & Rim Dressing - 2000 BDT</option>
-                                    <option>Ceiling Deep Clean - 2000 BDT</option>
-                                    <option>Water Supply - 2000 BDT</option>
-                                    <option>Electric Supply - 3000 BDT/Hr</option>
-                                </select>
-                                <div className="form-control">
-                                    <input type="date" className="input input-bordered" />
-                                </div>
-                                <div className="form-control mt-6">
-                                    <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center mr-2 mb-2">Schedule Your Service</button>
-                                </div>
-                            </div>
+                                <textarea name="message" {...register("aboutYou")} placeholder="About you" />
+                                <input type="submit" />
+                            </form> */}
+
                         </div>
                     </div>
                 </div>
@@ -68,5 +87,4 @@ const Banner = () => {
         </div>
     );
 };
-
 export default Banner;

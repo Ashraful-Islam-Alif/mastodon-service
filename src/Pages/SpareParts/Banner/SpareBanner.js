@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import emailjs from 'emailjs-com'
+// import emailjs from 'emailjs-com'
 import Navbar from '../../Home/Navbar/Navbar';
 import SearchBox from '../Searchbox/SearchBox';
 import './SpareBanner.css'
@@ -15,14 +15,14 @@ const SpareBanner = () => {
         const email = emailRef.current.value;
         e.preventDefault();
 
-        emailjs.sendForm('gmail', 'template_byn7x2q', e.target, 'user_88G7qWVLDpe81zAy')
+        // emailjs.sendForm('gmail', 'template_byn7x2q', e.target, 'user_88G7qWVLDpe81zAy')
 
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-        e.target.reset();
+        //     .then((result) => {
+        //         console.log(result.text);
+        //     }, (error) => {
+        //         console.log(error.text);
+        //     });
+        // e.target.reset();
     }
     return (
         <div className='bg-gray-100 sparebanner'>
