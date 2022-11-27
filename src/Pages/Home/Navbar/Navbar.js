@@ -20,8 +20,8 @@ const Navbar = () => {
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/home'>Home</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>AboutUs</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>Spare Parts</Link>
-                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service indicator'> <span className="indicator-item badge bg-[#006a4e] border-0">Comming Soon</span> Mechanics</Link>
-                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar indicator'><span className="indicator-item badge bg-[#006a4e] border-0">Comming Soon</span>Garages</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Mechanics</Link>
+                        <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>Garages</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
                         <li>
                             {user ?
@@ -52,10 +52,12 @@ const Navbar = () => {
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>About</Link>
                     <button className=' dropdown dropdown-hover dropdown-center'>
                         <label tabIndex={0} className="p-3 mr-2  hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]">Services</label>
-                        <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-box w-52 text-start p-2 mt-2">
+                        <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-box w-52 text-start p-2 my-2">
                             <Link to='/spareParts' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2'>SpareParts </Link>
-                            <Link to='/service' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 indicator'> <span className="indicator-item badge text-xs  bg-[#006a4e] border-0 ">Coming Soon</span>Mechanics</Link>
-                            <Link to='/buyCar' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 indicator'> <span className="indicator-item badge w-28 text-xs bg-[#006a4e] border-0 ">Coming Soon</span> Garages</Link>
+
+                            {/* Upper case code <span className="indicator-item badge w-28 text-xs bg-[#006a4e] border-0 ">Coming Soon</span> */}
+                            <Link to='/service' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 '> Mechanics</Link>
+                            <Link to='/buyCar' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 '>  Garages</Link>
                         </ul>
                     </button>
                     {/* <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>BuyACar</Link>

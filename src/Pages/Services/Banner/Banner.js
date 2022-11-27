@@ -6,6 +6,29 @@ import Input from "@material-ui/core/Input";
 import Navbar from '../../../Pages/Home/Navbar/Navbar';
 import SearchBox from '../../../Pages/SpareParts/Searchbox/SearchBox';
 import { useState } from "react";
+import { toast } from 'react-toastify';
+const carModelData = [
+    {
+        name: "Audi",
+        models: ["A3", "A4", "A5", "A6", "A7", "A8L", "Q2", "Q3", "Q5", "Q7", "Q8", "RS Q8"]
+    },
+    {
+        name: "BMW",
+        models: ["2 Series", "3 Series", "5 Series", "7 Series", "4 series coupe", "4 series gran coupe", "X1", "X2", "X3", "X5", "X7"]
+    },
+    {
+        name: "Foton",
+        models: ["Foton SUV", "Foton Microbus"]
+    },
+    {
+        name: "Haval",
+        models: ["H6 SUV", "H9 SUV", "JOLION"]
+    },
+    {
+        name: "HONDA",
+        models: ["Accord Turbo", "City", "Civic Turbo", "CR-V ", "CR-V Touring", "Fit", "Grace(Recondition)", "HR-V", "Vezel X L", "Vezel Ex"]
+    }
+];
 const Banner = () => {
     const { control } = useForm({
         defaultValues: {
@@ -24,8 +47,37 @@ const Banner = () => {
                 console.log(error.text);
             });
         e.target.reset();
+        toast('Order Place Successfully')
     };
 
+    // Dynamic selection start
+    const [{ carModel, model }, setData] = useState({
+        carModel: "Audi",
+        model: ""
+    });
+
+    const countries = carModelData.map((carModel) => (
+        <option key={carModel.name} value={carModel.name}>
+            {carModel.name}
+        </option>
+
+    ));
+
+    const models = carModelData.find(item => item.name === carModel)?.models.map((model) => (
+        <option key={model} value={model}>
+            {model}
+        </option>
+    ));
+
+    function handlecarModelChange(event) {
+        setData(data => ({ model: '', carModel: event.target.value }));
+    }
+
+    function handleStateChange(event) {
+        setData(data => ({ ...data, model: event.target.value }));
+    }
+
+    // Dynamic selection End
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
@@ -42,44 +94,33 @@ const Banner = () => {
                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center">Request Brochure</button>
                             </div>
                         </div>
-                        <div >
-                            <form className='grid grid-rows-4 gap-4' ref={form} onSubmit={sendEmail}>
-                                <label>Name</label>
-                                <input className='border' type="text" name="name" />
-                                <label>Email</label>
-                                <input className='border' type="email" name="email" />
-                                <label>Message</label>
-                                <Controller
-                                    name="select"
-                                    control={control}
-                                    render={({ field }) => <Select
-                                        {...field}
-                                        options={[
-                                            { value: "chocolate", label: "Chocolate" },
-                                            { value: "strawberry", label: "Strawberry" },
-                                            { value: "vanilla", label: "Vanilla" }
-                                        ]}
-                                    />}
-                                />
-                                <textarea name="message" />
-                                <input className='border cursor-pointer bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center text-white' type="submit" value="Send" />
-                            </form>
+                        <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+                            <div className="card-body">
+                                <form className='grid grid-rows-4 gap-2' ref={form} onSubmit={sendEmail}>
+                                    {/* <label className='my-2'>Name</label> */}
+                                    <input placeholder='Full name' className='form-control input input-bordered' type="text" name="name" required />
+                                    {/* <label className='my-2'>Email</label> */}
+                                    <input placeholder='Email' className='form-control input input-bordered' type="email" name="email" required />
+                                    <input placeholder='Phone Number' className='form-control input input-bordered' type="number" name="phone-number" required />
+                                    <input className='form-control input input-bordered' placeholder='Address' name="address" required />
+                                    {/* <label className='my-2'>Message</label> */}
+                                    <div className='py-4'>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={carModel} onChange={handlecarModelChange} required>
+                                            <option disabled selected>Which Brand do you Prefer? </option>
+                                            {countries}
 
-                            {/* ___________________________________________________________ */}
-
-                            {/* <form className='grid grid-rows-4 gap-4' handleSubmit={onSubmit}>
-
-                                <input {...register("firstName")} placeholder="First name" type="text" name="name" />
-                                <input {...register("email")} placeholder="Email" type="email" name="email" />
-                                <select {...register("category", { required: true })}>
-                                    <option value="">Select...</option>
-                                    <option value="A">Option A</option>
-                                    <option value="B">Option B</option>
-                                </select>
-                                <textarea name="message" {...register("aboutYou")} placeholder="About you" />
-                                <input type="submit" />
-                            </form> */}
-
+                                        </select>
+                                    </div>
+                                    <div className=''>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={model} onChange={handleStateChange} required>
+                                            <option disabled selected>Which Model do you Prefer? </option>
+                                            {models}
+                                        </select>
+                                    </div>
+                                    <textarea className='p-4 rounded-lg my-4 border' placeholder='Write if you have any intruction' name="message" />
+                                    <input className='border cursor-pointer bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center text-white' type="submit" value="Confirm Order" />
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

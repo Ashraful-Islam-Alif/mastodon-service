@@ -12,6 +12,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import Loading from './Pages/Login/Login/Loading';
 import PageNotFound from './Pages/NotFound/PageNotFound';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -33,6 +34,7 @@ function App() {
               <Route path='/register' element={<CreateAccount></CreateAccount>}></Route>
               <Route path='*' elements={<PageNotFound />}></Route>
             </Routes>
+            <ToastContainer></ToastContainer>
           </div>)
       }
 

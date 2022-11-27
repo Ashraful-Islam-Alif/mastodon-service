@@ -1,34 +1,84 @@
-import React, { useRef } from 'react';
-// import emailjs from 'emailjs-com'
+import React, { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
+import { useForm, Controller } from "react-hook-form";
 import Navbar from '../../Home/Navbar/Navbar';
-import SearchBox from '../Searchbox/SearchBox';
+import { toast } from 'react-toastify';
 import './SpareBanner.css'
 import UpperBanner from './UpperBanner';
-import { Button, Form } from 'react-bootstrap';
-import { ToastContainer } from 'react-toastify';
 
+const carModelData = [
+    {
+        name: "Audi",
+        models: ["A3", "A4", "A5", "A6", "A7", "A8L", "Q2", "Q3", "Q5", "Q7", "Q8", "RS Q8"]
+    },
+    {
+        name: "BMW",
+        models: ["2 Series", "3 Series", "5 Series", "7 Series", "4 series coupe", "4 series gran coupe", "X1", "X2", "X3", "X5", "X7"]
+    },
+    {
+        name: "Foton",
+        models: ["Foton SUV", "Foton Microbus"]
+    },
+    {
+        name: "Haval",
+        models: ["H6 SUV", "H9 SUV", "JOLION"]
+    },
+    {
+        name: "HONDA",
+        models: ["Accord Turbo", "City", "Civic Turbo", "CR-V ", "CR-V Touring", "Fit", "Grace(Recondition)", "HR-V", "Vezel X L", "Vezel Ex"]
+    }
+];
 const SpareBanner = () => {
-    const nameRef = useRef('');
-    const emailRef = useRef('');
-    function sendEmail(e) {
-        const name = nameRef.current.value;
-        const email = emailRef.current.value;
+    const { control } = useForm({
+        defaultValues: {
+            firstName: '',
+            select: {}
+        }
+    });
+    const form = useRef();
+    const sendEmail = (e) => {
         e.preventDefault();
 
-        // emailjs.sendForm('gmail', 'template_byn7x2q', e.target, 'user_88G7qWVLDpe81zAy')
+        emailjs.sendForm('gmail', 'template_l0m2ihs', form.current, '_88G7qWVLDpe81zAy')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        e.target.reset();
+        toast('Order Place Successfully')
+    };
 
-        //     .then((result) => {
-        //         console.log(result.text);
-        //     }, (error) => {
-        //         console.log(error.text);
-        //     });
-        // e.target.reset();
+    // Dynamic selection start
+    const [{ carModel, model }, setData] = useState({});
+
+    const countries = carModelData.map((carModel) => (
+        <option key={carModel.name} value={carModel.name}>
+            {carModel.name}
+        </option>
+
+    ));
+
+    const models = carModelData.find(item => item.name === carModel)?.models.map((model) => (
+        <option key={model} value={model}>
+            {model}
+        </option>
+    ));
+
+    function handlecarModelChange(event) {
+        setData(data => ({ model: '', carModel: event.target.value }));
     }
+
+    function handleStateChange(event) {
+        setData(data => ({ ...data, model: event.target.value }));
+    }
+
+    // Dynamic selection End
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
             {/* <SearchBox></SearchBox> */}
-            <UpperBanner></UpperBanner>
+            {/* <UpperBanner></UpperBanner> */}
             <div className='container mx-auto  px-8 py-24 '>
                 <div data-aos="fade-up"
                     data-aos-duration="2000"
@@ -41,86 +91,35 @@ const SpareBanner = () => {
                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center">Request Brochure</button>
                             </div>
                         </div>
+                        <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+                            <div className="card-body">
+                                <form className='grid grid-rows-4 gap-2' ref={form} onSubmit={sendEmail}>
+                                    {/* <label className='my-2'>Name</label> */}
+                                    <input placeholder='Full name' className='form-control input input-bordered' type="text" name="name" required />
+                                    {/* <label className='my-2'>Email</label> */}
+                                    <input placeholder='Email' className='form-control input input-bordered' type="email" name="email" required />
+                                    <input placeholder='Phone Number' className='form-control input input-bordered' type="number" name="phone-number" required />
+                                    <input className='form-control input input-bordered' placeholder='Address' name="address" required />
+                                    {/* <label className='my-2'>Message</label> */}
+                                    <div className='py-4'>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={carModel} onChange={handlecarModelChange} required>
+                                            <option disabled selected>Which Brand do you Prefer? </option>
+                                            {countries}
 
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                            {/* <form onSubmit={sendEmail}>
-                                <div className="card-body">
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Name</span>
-                                        </label>
-                                        <input type="text" placeholder="Full name" name='name' className="input input-bordered" />
+                                        </select>
                                     </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Email</span>
-                                        </label>
-                                        <input type="text" placeholder="email" name='email' className="input input-bordered" />
+                                    <div className=''>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={model} onChange={handleStateChange} required>
+                                            <option disabled selected>Which Model do you Prefer? </option>
+                                            {models}
+                                        </select>
                                     </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Number</span>
-                                        </label>
-                                        <input type="number" placeholder="Phone number" name='number' className="input input-bordered" />
-                                    </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Address</span>
-                                        </label>
-                                        <input type="text" placeholder="Address" name='address' className="input input-bordered" />
-                                    </div>
-                                    <select className="select select-bordered w-full max-w-xs font-normal">
-                                        <option disabled selected>Which Spare Parts do you prefer?</option>
-                                        <option>Brakes & Suspension</option>
-                                        <option>Body Parts & Mirror</option>
-                                        <option>Car Lights</option>
-                                        <option>Car Lights</option>
-                                        <option>Engine & Drive</option>
-                                        <option>Electronic Parts</option>
-                                        <option>Filter</option>
-                                        <option>Car Accessories</option>
-                                    </select>
-                                    <select className="select select-bordered w-full max-w-xs font-normal">
-                                        <option disabled selected>Parts Name</option>
-                                        <option>Brakes</option>
-                                        <option>AC Parts</option>
-                                        <option>Tyres</option>
-                                        <option>Steering</option>
-                                        <option>Glassess</option>
-                                    </select>
-                                    <select className="select select-bordered w-full max-w-xs font-normal">
-                                        <option disabled selected>Select Year Range</option>
-                                        <option><input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" /></option>
-                                    </select>
-                                    <div className="form-control mt-6">
-                                        <input type="submit" value="Send Message" className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center mr-2 mb-2">
-                                            Confirm Order
-                                        </input>
-                                    </div>
-                                </div>
-                            </form> */}
-                            <div className=''>
-                                <div className='flex items-center justify-center flex-col h-screen '>
-                                    <div className=' rounded-xl py-24 px-12 '>
-                                        <Form onSubmit={sendEmail}>
-                                            <Form.Group className="mb-3  p-2 text-black" controlId="formBasicName">
-                                                <Form.Label className='text-white'>Name</Form.Label>
-                                                <Form.Control className='px-16 p-2 pl-3 rounded-lg bg-gray-300' ref={nameRef} type="name" placeholder="Full Name" required />
-                                            </Form.Group>
-
-                                            <Form.Group className="mb-3 p-2 text-black" controlId="formBasicPassword">
-                                                <Form.Label className='text-white'>Email address</Form.Label>
-                                                <Form.Control className='px-16 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
-                                            </Form.Group>
-                                            <Button type="submit" className='w-50 mx-auto  ml-2 px-28 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg  py-2.5 text-center mr-2 border-none'>
-                                                Confirm Order
-                                            </Button>
-                                        </Form>
-                                    </div>
-                                    <ToastContainer />
-                                </div>
+                                    <textarea className='p-4 rounded-lg my-4 border' placeholder='Write if you have any intruction' name="message" />
+                                    <input className='border cursor-pointer bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center text-white' type="submit" value="Confirm Order" />
+                                </form>
                             </div>
                         </div>
+
 
                     </div>
                 </div>
