@@ -52,8 +52,7 @@ const Banner = () => {
 
     // Dynamic selection start
     const [{ carModel, model }, setData] = useState({
-        carModel: "Audi",
-        model: ""
+
     });
 
     const countries = carModelData.map((carModel) => (

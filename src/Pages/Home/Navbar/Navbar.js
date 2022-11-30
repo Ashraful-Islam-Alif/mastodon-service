@@ -58,6 +58,7 @@ const Navbar = () => {
                             {/* Upper case code <span className="indicator-item badge w-28 text-xs bg-[#006a4e] border-0 ">Coming Soon</span> */}
                             <Link to='/service' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 '> Mechanics</Link>
                             <Link to='/buyCar' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 '>  Garages</Link>
+                            <Link to='/test' className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e] mt-4 py-2 px-2 '>  Test search</Link>
                         </ul>
                     </button>
                     {/* <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>BuyACar</Link>

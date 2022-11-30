@@ -13,6 +13,7 @@ import auth from './firebase.init';
 import Loading from './Pages/Login/Login/Loading';
 import PageNotFound from './Pages/NotFound/PageNotFound';
 import { ToastContainer } from 'react-toastify';
+import Test from './Pages/Test';
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -21,13 +22,14 @@ function App() {
       {
         loading ? (<Loading></Loading>)
           :
-          (<div className='bg-gray-300'>
+          (<div className='h-screen bg-gray-300'>
             <Routes >
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
               <Route path='/spareParts' element={<SpareParts></SpareParts>}></Route>
               <Route path='/buyCar' element={<BuyCar></BuyCar>}></Route>
+              <Route path='/test' element={<Test></Test>}></Route>
               <Route path='/service' element={<Services></Services>}></Route>
               <Route path='/blog' element={<Blogs></Blogs>}></Route>
               <Route path='/login' element={<Login></Login>}></Route>
