@@ -14,6 +14,7 @@ import Loading from './Pages/Login/Login/Loading';
 import PageNotFound from './Pages/NotFound/PageNotFound';
 import { ToastContainer } from 'react-toastify';
 import Test from './Pages/Test';
+import RequireAuth from './Pages/Login/Login/RequireAuth';
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -22,7 +23,7 @@ function App() {
       {
         loading ? (<Loading></Loading>)
           :
-          (<div className='h-screen bg-gray-300'>
+          (<div className='bg-gray-300'>
             <Routes >
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />

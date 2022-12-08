@@ -26,7 +26,135 @@ const carModelData = [
     {
         name: "HONDA",
         models: ["Accord Turbo", "City", "Civic Turbo", "CR-V ", "CR-V Touring", "Fit", "Grace(Recondition)", "HR-V", "Vezel X L", "Vezel Ex"]
-    }
+    },
+    {
+        name: "Hyundai",
+        models: ["Accent", "Creta", "Elantra", "H1", "Santa FE", "Sonata", "Tucson"]
+    },
+    {
+        name: "KIA",
+        models: ["Optima", "Seltos", "Sonet", "Sportage"]
+    },
+    {
+        name: "LEXUS",
+        models: ["ES 300H", "LC500H", "NX", "RX350"]
+    },
+    {
+        name: "MAHINDRA",
+        models: ["TUV300", "XUV300", "Bolero", "SCORPIO"]
+    },
+    {
+        name: "MAZDA",
+        models: ["6 GRAND TOURING", "AXELA", "CX-3", "MX-5"]
+    },
+    {
+        name: "MERCEDES-BENZ",
+        models: ["B-CLASS B200 CDI SPORT", "B-CLASS 160", "B-CLASS 180", "B-CLASS 200", "B-CLASS 200 4MATIC D", "B-CLASS 200 D", "CLA", "E-CLASS", "E-CLASS AMG E43 4MATIC", "E-CLASS AMG E63 S", "E-CLASS AMG E63 S WAGON", "GLC 43 AMG COUPE", "GLC 220D 4MATIC", "GLC 250 4MATIC ", "GLC 250D 4MATIC", "GLC 300D 4MATIC", "GLC 350D 4MATIC"]
+    },
+    {
+        name: "MORRIS GARAGE",
+        models: ["GLOSTER", "H3", "MG3", "ZS"]
+    },
+    {
+        name: "MITSUBISHI",
+        models: ["ASX", "ATTRAGE", "L200", "LANCER EX", "OUTLANDER", "OUTLANDER PHEV", "PAJERO", "PAJERO SPORTS", "ROSA", "XPANDER"]
+    },
+    {
+        name: "NISSAN",
+        models: ["NAVARA", "PATROL", "SYLPHY", "URVAN", "GTR", "X-TRAIL"]
+    },
+    {
+        name: "PEUGEOT",
+        models: ["2008 SUV", "3008", "508"]
+    },
+    {
+        name: "PROTON",
+        models: ["PERSONA", "SEGA", "X70 EXECUTIVE", "X7 PREMIUM"]
+    },
+    {
+        name: "LAND ROVER",
+        models: ["DEFENDER", "DISCOVERY", "LAND ROVER RANGE ROVER", "RANGE ROVER EVOQUE", "RANGE ROVER SPORT", "RANGE ROVER VELAR"]
+    },
+    {
+        name: "RENAULT",
+        models: ["DUSTER", "KWID", "TRIBER"]
+    },
+    {
+        name: "SUZUKI",
+        models: ["ALTO 800", "APV MICROBUS", "CIAZ", "DZIRE", "ERTIGA", "GRAND VITARA", "SWIFT", "WAGON R"]
+    },
+    {
+        name: "TATA",
+        models: ["ALTROZ", "HARRIER", "INDIGO ECS", "MAGIC IRIS", "NANO", "NEXON", "TIAGO", "XENON"]
+    },
+    {
+        name: "TOYOTA",
+        models: ["ALLION", "ALPHARD HYBRID", "AQUA", "AVANZA", "AXIO", "AXIO FIELDER", "C-HR HYBRID", "CAMRY", "COROLLA ALTIS", "COROLLA CROSS", "CROWN ROYAL", "CROWN MAJESTA", "FORTUNER LEGENDER", "FORTUNER", "HARRIER", "HIACE 12 -15", "HILANDER", "HIACE 16", "HILUX DOUBLE CABIN", "HILUX SINGLE CABIN (4WD)", "LC200", "Mark 2 Tourer", "Mark 2 Grande", "NOAH HYBRID", "LAND CRUISER PRADO", "PREMIO", "PRIUS", "PRIUS", "PROBOX OLD", "RAV4", " RUSH", "SUPRA MK4", "SUPRA MK5", "VITZ", "YARIS 1.3L", "YARIS 1.5L", "GR YARIS 1.5L SPORT"]
+    },
+    {
+        name: "VOLVO",
+        models: [" S90 Hybrid T8 R-Design 2021", "V60 T5 AWD"]
+    },
+    {
+        name: "Lamborghini",
+        models: ["Huracan evo "]
+    },
+    {
+        name: "Volkswagen",
+        models: ["Touareg V8 R Line"]
+    },
+    {
+        name: "Jaguar",
+        models: ["XJL AWD", "XJ XJL AWD", "F pace", "XF"]
+    },
+    {
+        name: "Porsche",
+        models: [" 718 Boxster GTS 4.0 2020", "Panamera 4s", "Macan", "718 cayman gt4", "taycan turbo", "Cayenne turbo"]
+    },
+    {
+        name: "Ford",
+        models: ["Mustang", "RAPTOR", "Eco sport", "RANGER"]
+    },
+    {
+        name: "TESLA",
+        models: ["MODEL 3", "MODEL S P100D", "MODEL Y"]
+    },
+    {
+        name: "BENTLEY",
+        models: ["Genesis", "Continental GT", "Bentayga", "Flying Spur"]
+    },
+    {
+        name: "SUBARU",
+        models: ["BRZ", "WRX STI", "XV", "Legacy B4", "Impreza"]
+    },
+    {
+        name: "FERRARI",
+        models: ["458 Italia", "328 GTS", "F430"]
+    },
+    {
+        name: "HUMMER",
+        models: ["H2"]
+    },
+    {
+        name: "CADILLAC",
+        models: ["Escalade Esv", "Escalade 2015", "CTS", "Escalade 2010"]
+    },
+    {
+        name: "Rolls- Royce",
+        models: ["Wraith", "Ghost(stock)", "Phantom Vlll", "Ghost Mansory", "Ghost 2014 Series 2"]
+    },
+    {
+        name: "MASERATI",
+        models: ["Maserati Levante", "Quattroporte S"]
+    },
+    {
+        name: "Chevrolet",
+        models: ["Camaro Zl1", "Camaro SS", "Sonic", "Spark IS", "Trailblazer It", "Trailblazer", "Hennesy Camaro hpe650"]
+    },
+    {
+        name: "OTHER",
+        models: ["OTHER"]
+    },
 ];
 const SpareBanner = () => {
     const { control } = useForm({

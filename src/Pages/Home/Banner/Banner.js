@@ -11,16 +11,15 @@ const Banner = () => {
                 <div className='max-w-md'>
                     <h2 className='text-white text-2xl md:text-3xl lg:text-7xl font-semibold py-8'>Looking for?</h2>
                     <div className=" btn-group btn-group-vertical text-center">
+                        <Link to='/buyCar' data-aos="fade-right"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2">Detailing</Link>
                         <Link to='/spareParts' data-aos="fade-right"
                             data-aos-easing="linear"
                             data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2">Spare Parts </Link>
                         <Link to='/service' data-aos="fade-right"
                             data-aos-easing="linear"
-                            data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2">Mechanics</Link>
-                        <Link to='/buyCar' data-aos="fade-right"
-                            data-aos-easing="linear"
-                            data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2"> Garages</Link>
-                    </div>
+                            data-aos-duration="1500" className="text-[#006a4e] hover:text-[#ffff] bg-gray-300 hover:bg-[#9abe4ecf] font-bold rounded-full px-16 py-4 m-2">Mechanics</Link>                    </div>
                 </div>
             </div>
             {/* <div className="hero min-h-screen" style={{ backgroundImage: `url("https://i.ibb.co/3dqSZBQ/bg.jpg")`, backgroundPosition: 'left top' }}>

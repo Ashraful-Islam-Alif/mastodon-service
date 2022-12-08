@@ -14,12 +14,16 @@ const CreateAccount = () => {
     const navigate = useNavigate();
     let location = useLocation()
     let from = location.state?.from?.pathname || "/";
+
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigateLogin = event => {
         navigate('/login')
