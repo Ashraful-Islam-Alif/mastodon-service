@@ -14,10 +14,10 @@ import Loading from './Pages/Login/Login/Loading';
 import PageNotFound from './Pages/NotFound/PageNotFound';
 import { ToastContainer } from 'react-toastify';
 import Test from './Pages/Test';
-import RequireAuth from './Pages/Login/Login/RequireAuth';
+// import RequireAuth from './Pages/Login/Login/RequireAuth';
 
 function App() {
-  const [user, loading] = useAuthState(auth);
+  const [loading] = useAuthState(auth);
   return (
     <>
       {

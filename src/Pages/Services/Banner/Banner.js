@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
@@ -7,28 +7,22 @@ import Navbar from '../../../Pages/Home/Navbar/Navbar';
 import SearchBox from '../../../Pages/SpareParts/Searchbox/SearchBox';
 import { useState } from "react";
 import { toast } from 'react-toastify';
-const carModelData = [
+
+const DurationInfo = [
     {
-        name: "Audi",
-        models: ["A3", "A4", "A5", "A6", "A7", "A8L", "Q2", "Q3", "Q5", "Q7", "Q8", "RS Q8"]
+        durations: "Hourly",
+        prices: ["400"]
     },
     {
-        name: "BMW",
-        models: ["2 Series", "3 Series", "5 Series", "7 Series", "4 series coupe", "4 series gran coupe", "X1", "X2", "X3", "X5", "X7"]
+        durations: "Half Day",
+        prices: ["1000"]
     },
     {
-        name: "Foton",
-        models: ["Foton SUV", "Foton Microbus"]
-    },
-    {
-        name: "Haval",
-        models: ["H6 SUV", "H9 SUV", "JOLION"]
-    },
-    {
-        name: "HONDA",
-        models: ["Accord Turbo", "City", "Civic Turbo", "CR-V ", "CR-V Touring", "Fit", "Grace(Recondition)", "HR-V", "Vezel X L", "Vezel Ex"]
+        durations: "Full Day",
+        prices: ["1600"]
     }
-];
+]
+
 const Banner = () => {
     const { control } = useForm({
         defaultValues: {
@@ -49,13 +43,40 @@ const Banner = () => {
         e.target.reset();
         toast('Order Place Successfully')
     };
+    //Duration
+    const [{ mechanicsDuration, price }, setBuyCarPackages] = useState({})
 
+    const CarDuration = DurationInfo.map((mechanicsDuration) => (
+        <option key={mechanicsDuration.durations} value={mechanicsDuration.durations}>
+            {mechanicsDuration.durations}
+        </option>
+    ))
+
+    const CarDurationPrices = DurationInfo.find(item => item.durations === mechanicsDuration)?.prices.map((price) => (
+        <option key={price} value={price}>
+            {price}
+        </option>
+    ))
+
+    function handlecarDuration(event) {
+        setBuyCarPackages(data => ({ price: '', mechanicsDuration: event.target.value }));
+    }
+
+    function handlePrice(event) {
+        setBuyCarPackages(data => ({ ...data, price: event.target.value }));
+    }
     // Dynamic selection start
-    const [{ carModel, model }, setData] = useState({
+    const [carModelData, setCarModelData] = useState([])
 
-    });
+    useEffect(() => {
+        fetch('sparePartsBrandModel.json')
+            .then(res => res.json())
+            .then(data => setCarModelData(data))
+    }, [])
 
-    const countries = carModelData.map((carModel) => (
+    const [{ carModel, model }, setData] = useState({});
+
+    const brands = carModelData.map((carModel) => (
         <option key={carModel.name} value={carModel.name}>
             {carModel.name}
         </option>
@@ -106,7 +127,7 @@ const Banner = () => {
                                     <div className='py-4'>
                                         <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={carModel} onChange={handlecarModelChange} required>
                                             <option disabled selected>Which Brand do you Prefer? </option>
-                                            {countries}
+                                            {brands}
 
                                         </select>
                                     </div>
@@ -114,6 +135,19 @@ const Banner = () => {
                                         <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={model} onChange={handleStateChange} required>
                                             <option disabled selected>Which Model do you Prefer? </option>
                                             {models}
+                                        </select>
+                                    </div>
+                                    <div className='py-4'>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={mechanicsDuration} onChange={handlecarDuration} required>
+                                            <option disabled selected>Packages </option>
+                                            {CarDuration}
+
+                                        </select>
+                                    </div>
+                                    <div className=''>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={price} onChange={handlePrice} required>
+                                            {/* <option disabled selected>Prices </option> */}
+                                            {CarDurationPrices}
                                         </select>
                                     </div>
                                     <textarea className='p-4 rounded-lg my-4 border' placeholder='Write if you have any intruction' name="message" />
