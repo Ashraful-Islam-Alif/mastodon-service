@@ -32,7 +32,7 @@ const Banner = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('gmail', 'template_l0m2ihs', form.current, '_88G7qWVLDpe81zAy')
+        emailjs.sendForm('gmail', 'template_zwg62jc', form.current, 'eTaI0igbbK46QsEv7')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
