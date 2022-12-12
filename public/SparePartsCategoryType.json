@@ -1,0 +1,346 @@
+[
+    {
+        "name": "Brakes",
+        "types": [
+            "Brake Pads",
+            "Brake Shoes",
+            "Brake Parts",
+            "Brake Disc Rotor"
+        ]
+    },
+    {
+        "name": "SUSPENSION PARTS",
+        "types": [
+            "Track Control Arms",
+            "Center Link & Drag Link Assembly",
+            "Ball Joints & Parts",
+            "Rack Ends",
+            "Suspension Bushes, Kits & Parts",
+            "Tie Rod End",
+            "Shock Absorber",
+            "Stablizer Joint"
+        ]
+    },
+    {
+        "name": "Body Parts & Mirror",
+        "types": [
+            "BONNET PARTS, LOCKS, LATCHES",
+            "BUMPERS",
+            "BUMPERS PARTS",
+            "BUS, TRUCK BODY PARTS, KITS & ACCESSORIES",
+            "CLIPS & CONNECTORS",
+            "FLAG RODS",
+            "GARNISH",
+            "KNOBS",
+            "LICENCE PLATE & PARTS",
+            "MISC BODY PARTS",
+            "MUD FLAPS",
+            "OIL CAPS",
+            "OPENERS",
+            "PEDALS & PARTS",
+            "RC ASSEMBLY & PARTS",
+            "STOPPER",
+            "STRICKER",
+            "STEPNEY PARTS",
+            "SEAT RECLINERS & SEAT PARTS",
+            "DOOR TRIMS & PANELS"
+        ]
+    },
+    {
+        "name": "CONTROL CABLES",
+        "types": [
+            "Air Control Cables",
+            "Accelerator Cables",
+            "Bonnet Cables",
+            "Choke Cables",
+            "Clutch Cables",
+            "Dicky Cables",
+            "Fuel Lid Cables",
+            "Gear Shifter Cables",
+            "Parking Brake Cables",
+            "R C Assembly Cables",
+            "Speedometer Cables",
+            "Seat Cables",
+            "Stepney Cables",
+            "Temperature Cables"
+        ]
+    },
+    {
+        "name": "FUEL TANK",
+        "types": [
+            "Fuel Tank Parts",
+            "Fuel Tank Caps & Locks"
+        ]
+    },
+    {
+        "name": "GRILLS & BEEZELS",
+        "types": [
+            "Grill",
+            "Beezel",
+            "Tail Lamp Garnish"
+        ]
+    },
+    {
+        "name": "HANDLES & LOCKS",
+        "types": [
+            "Locking Kits",
+            "Latches",
+            "Locks",
+            "Handle"
+        ]
+    },
+    {
+        "name": "Car Lights",
+        "types": [
+            "Bulbs",
+            "Bumper Lights",
+            "Bumper Reflectors",
+            "CORNER LIGHTS",
+            "CORNER LIGHT GLASS",
+            "CORNER LIGHT HOLDERS",
+            "FOG LIGHTS",
+            "HEAD LIGHTS",
+            "INDICATOR GLASS",
+            "INDICATOR LIGHTS",
+            "NUMBER PLATE LIGHTS",
+            "PARKING LIGHT GLASS",
+            "PARKING LIGHT HOLDER",
+            "PARKING LIGHTS",
+            "REVERSE LIGHTS",
+            "ROOF LIGHTS",
+            "ROOF LIGHT GLASS",
+            "STOP LIGHTS",
+            "TAIL LAMP GLASS",
+            "TAIL LIGHTS",
+            "TAIL LIGHT HOLDERS"
+        ]
+    },
+    {
+        "name": "Engine & Drive",
+        "types": [
+            "ENGINE MISC PARTS",
+            "FUEL PUMPS & PARTS",
+            "WATER PUMPS & PARTS",
+            "CARBURETOR PARTS",
+            "RADIATOR",
+            "STEERING PARTS",
+            "SILENCERS & EXHAUST SYSTEMS",
+            "TOOLS AND TESTERS",
+            "COOLANT",
+            "CHAIN SPROCKETS",
+            "GREASE"
+        ]
+    },
+    {
+        "name": "AUTOMOTIVE BELTS",
+        "types": [
+            "Alternator Belts",
+            "AC Belts",
+            "Compressor Belts",
+            "Power Steering Belts",
+            "Timing Belts",
+            "Water Pump Belts"
+        ]
+    },
+    {
+        "name": "BEARINGS",
+        "types": [
+            "Alternator Bearings",
+            "A/C Bearings",
+            "Axle Bearing",
+            "Clutch Release Bearings",
+            "Wheel Bearings",
+            "Starter Bearings"
+        ]
+    },
+    {
+        "name": "Gear",
+        "types": [
+            "Gear Box Parts",
+            "Gear Lever Parts"
+        ]
+    },
+    {
+        "name": "DRIVE",
+        "types": [
+            "Drive Shaft Assy",
+            "C V Joint",
+            "U J Cross",
+            "Axle Boots, Clips & Parts",
+            "Wheel Bearings",
+            "Starter Bearings"
+        ]
+    },
+    {
+        "name": "CARBON BRUSH",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "COMBINATION SWITCH",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "RELAYS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "DISTRIBUTOR & PARTS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "FLASHERS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "FUSE BOX",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "HOLDERS & COUPLERS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "HORN & PARTS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "METERS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "TAPE",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "WIRE",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "SENSORS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "AC COMPRESSORS",
+        "types": [
+            ""
+        ]
+    },
+    {
+        "name": "ALTERNATOR & PARTS",
+        "types": [
+            "Rectifier",
+            "Regulator",
+            "Rotors & Stators"
+        ]
+    },
+    {
+        "name": "FUSES",
+        "types": [
+            "Blade Fuses",
+            "Slow Blow & Cartridge Fuses",
+            "Bolt Down Fuses",
+            "Fuse Links & Fuse Holders",
+            "Glass Fuses"
+        ]
+    },
+    {
+        "name": "IGNITION",
+        "types": [
+            "Battery Wire",
+            "Plug Leads",
+            "Ignition Switches & Locks",
+            "Battery Terminals",
+            "Glow Plugs",
+            "Ignition Coils & Parts",
+            "Spark Plugs"
+        ]
+    },
+    {
+        "name": "STARTERS & PARTS",
+        "types": [
+            "Armature",
+            "Field Coils",
+            "Rocker Plates",
+            "Self Housing & End Plates",
+            "Solenoid Switch & Parts",
+            "Starter Drive"
+        ]
+    },
+    {
+        "name": "SWITCHES",
+        "types": [
+            "Door Switch"
+        ]
+    },
+    {
+        "name": "Filter",
+        "types": [
+            "AIR FILTER",
+            "AIR CLEANERS & PARTS",
+            "CABIN AC FILTERS",
+            "CYCLON ASSEMBLY",
+            "FUEL FILTER",
+            "OIL FILTER",
+            "POWER STEERING FILTER",
+            "CAR FILTER KITS"
+        ]
+    },
+    {
+        "name": "Car Accessories",
+        "types": [
+            "CAR WAX/POLISH/SHAMPOO",
+            "GPS SYSTEMS",
+            "WHEELS, CAPS, HUBS & PARTS",
+            "EMERGENCY KITS",
+            "FLOOR FOOT MATS",
+            "FOG LIGHT COVERS",
+            "VACUUM CLEANERS",
+            "DOOR SCRATCH GUARDS",
+            "SPOILERS",
+            "MONOGRAMS",
+            "DOOR VISORS",
+            "SIDE DOOR BEADINGS",
+            "WINDOW SUN SHADES",
+            "WHEEL COVERS",
+            "MIRROR COVERS CHROME",
+            "CAR CHROME KITS",
+            "HEAD LAMP CHROME COVERS",
+            "OUTER DOOR HANDLE CHROME COVERS",
+            "FINGER GUARD CHROME COVERS",
+            "FOG LIGHT LAMP CHROME COVERS",
+            "DICKY GARNISH CHROME COVERS",
+            "PETROL TANK CHROME COVERS",
+            "SIDE INDICATOR CHROME COVERS",
+            "TAIL LAMP CHROME COVERS",
+            "CAR CARBON BLACK ACCESSORIES COMBO KIT",
+            "FOOT STEPS",
+            "BONNET GARNISH",
+            "CAR KEY COVERS",
+            "BUMPER PROTECTOR GUARDS"
+        ]
+    }
+]

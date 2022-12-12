@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
-import Input from "@material-ui/core/Input";
 import Navbar from '../../../Pages/Home/Navbar/Navbar';
-import SearchBox from '../../../Pages/SpareParts/Searchbox/SearchBox';
+// import SearchBox from '../../../Pages/SpareParts/Searchbox/SearchBox';
 import { useState } from "react";
 import { toast } from 'react-toastify';
 
@@ -65,6 +63,7 @@ const Banner = () => {
     function handlePrice(event) {
         setBuyCarPackages(data => ({ ...data, price: event.target.value }));
     }
+
     // Dynamic selection start
     const [carModelData, setCarModelData] = useState([])
 
@@ -141,12 +140,11 @@ const Banner = () => {
                                         <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={mechanicsDuration} onChange={handlecarDuration} required>
                                             <option disabled selected>Packages </option>
                                             {CarDuration}
-
                                         </select>
                                     </div>
                                     <div className=''>
                                         <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={price} onChange={handlePrice} required>
-                                            {/* <option disabled selected>Prices </option> */}
+                                            <option disabled selected>Prices </option>
                                             {CarDurationPrices}
                                         </select>
                                     </div>

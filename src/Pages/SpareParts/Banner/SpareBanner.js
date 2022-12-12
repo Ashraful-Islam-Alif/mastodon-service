@@ -4,7 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import Navbar from '../../Home/Navbar/Navbar';
 import { toast } from 'react-toastify';
 import './SpareBanner.css'
-import UpperBanner from './UpperBanner';
+// import UpperBanner from './UpperBanner';
+
 
 const SpareBanner = () => {
     const { control } = useForm({
@@ -27,11 +28,11 @@ const SpareBanner = () => {
         toast('Order Place Successfully')
     };
 
-    // Dynamic selection start
+    // Dynamic selection for car database start
     const [carModelData, setCarModelData] = useState([])
 
     useEffect(() => {
-        fetch('sparePartsBrandModel.json')
+        fetch('CarDatabase.json')
             .then(res => res.json())
             .then(data => setCarModelData(data))
     }, [])
@@ -58,7 +59,48 @@ const SpareBanner = () => {
         setData(data => ({ ...data, model: event.target.value }));
     }
 
-    // Dynamic selection End
+    // Dynamic selection for car database End
+
+    // Dynamic selection category and type started
+    const [sparePartsCategoryTypeData, setsparePartsCategoryTypeData] = useState([])
+
+    useEffect(() => {
+        fetch('SparePartsCategoryType.json')
+            .then(res => res.json())
+            .then(data => setsparePartsCategoryTypeData(data))
+    }, [])
+    const [{ allCategoryData, type, partsName }, setCategoryData] = useState({});
+
+    const Categories = sparePartsCategoryTypeData.map((allCategoryData) => (
+        <option key={allCategoryData.name} value={allCategoryData.name}>
+            {allCategoryData.name}
+        </option>
+
+    ));
+
+    const types = sparePartsCategoryTypeData.find(item => item.name === allCategoryData)?.types.map((type) => (
+        <option key={type} value={type}>
+            {type}
+        </option>
+    ));
+    // const partsNames = sparePartsCategoryTypeData.find(item => item.name === type)?.types.partsNames.map((partsName) => (
+    //     <option key={partsName} value={partsName}>
+    //         {partsName}
+    //     </option>
+    // ));
+
+    function handleCategoryChange(event) {
+        setCategoryData(data => ({ type: '', allCategoryData: event.target.value }));
+    }
+
+    function handleTypeChange(event) {
+        setCategoryData(data => ({ ...data, type: event.target.value }));
+    }
+    // function handlePartsNameChange(event) {
+    //     setCategoryData(data => ({ ...data, type: event.target.value }));
+    // }
+
+    // Dynamic selection selection category and type Ended
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
@@ -99,6 +141,24 @@ const SpareBanner = () => {
                                             {models}
                                         </select>
                                     </div>
+                                    <div className='py-4'>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={allCategoryData} onChange={handleCategoryChange} required>
+                                            <option disabled selected>Categories </option>
+                                            {Categories}
+                                        </select>
+                                    </div>
+                                    <div className=''>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={type} onChange={handleTypeChange} required>
+                                            <option disabled selected>Types </option>
+                                            {types}
+                                        </select>
+                                    </div>
+                                    {/* <div className='py-4'>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={partsName} onChange={handlePartsNameChange} required>
+                                            <option disabled selected>Parts Name </option>
+                                            {partsNames}
+                                        </select>
+                                    </div> */}
                                     <textarea className='p-4 rounded-lg my-4 border' placeholder='Write if you have any intruction' name="message" />
                                     <input className='border cursor-pointer bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center text-white' type="submit" value="Confirm Order" />
                                 </form>

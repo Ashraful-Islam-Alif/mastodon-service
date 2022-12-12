@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Brake & Suspension",
+        "types": [
+            "Brakes",
+            {
+                "partsNames": [
+                    "Brake Pads",
+                    "Brake Shoes",
+                    "Brake Parts",
+                    "Brake Disc Rotor"
+                ]
+            },
+            "Suspension Parts",
+            {
+                "partsNames": [
+                    "Track Control Arms",
+                    "Center Link & Drag Link Assembly",
+                    "Ball Joints & Parts",
+                    "Rack Ends",
+                    "Suspension Bushes, Kits & Parts",
+                    "Tie Rod End",
+                    "Shock Absorber",
+                    "Stablizer Joint"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Body Parts & Mirror",
+        "types": [
+            "Control Cables",
+            "Fuel Tank",
+            "Grills & Breezels",
+            "Handles & Locks"
+        ]
+    }
+]

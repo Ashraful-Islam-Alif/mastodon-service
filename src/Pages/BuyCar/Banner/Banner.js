@@ -147,7 +147,7 @@ const Banner = () => {
                                     </div>
                                     <div className=''>
                                         <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={price} onChange={handlePrice} required>
-                                            {/* <option disabled selected>Prices </option> */}
+                                            <option disabled selected>Prices </option>
                                             {Carprices}
                                         </select>
                                     </div>
