@@ -68,7 +68,7 @@ const Banner = () => {
 
 
     useEffect(() => {
-        fetch('sparePartsBrandModel.json')
+        fetch('CarDatabase.json')
             .then(res => res.json())
             .then(data => setCarModelData(data))
     }, [])

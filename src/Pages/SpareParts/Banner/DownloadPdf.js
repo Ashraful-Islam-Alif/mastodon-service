@@ -17,13 +17,11 @@ const DownloadPdf = () => {
         })
     }
     return (
-        <div className='container mx-auto'>
-
+        <div className='container mx-auto py-24 px-8'>
             <h2 className='text-[#006a4e]  text-2xl sm:text-4xl lg:text-6xl font-bold py-8'>Become a Mastodon Partner</h2>
             <button className='text-2xl font-bold' onClick={onButtonClick}>
                 Download PDF
             </button>
-
         </div>
     );
 };
