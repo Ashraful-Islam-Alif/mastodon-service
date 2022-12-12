@@ -90,8 +90,8 @@ const Login = () => {
                         </Button>
                         <div className='divider text-white'>OR</div>
                         <Button type="submit" className='w-50 mx-auto  ml-2 px-4 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg  py-2.5 text-center mr-2 border-none' onClick={() => signInWithGoogle()}>
-                            <img style={{ width: 30 }} src={google} alt="" srcset="" />
-                            <span> Continue with Google</span>
+                            <img style={{ width: 20 }} src={google} alt="" srcset="" />
+                            <span className='text-md md:text-lg'> Continue with Google</span>
                         </Button>
                     </Form>
 
