@@ -16,7 +16,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-slidder" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+                    <ul className="menu p-4 w-60 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><Link to='/dashboard'>Detailing Order</Link></li>
                         <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><Link to='/dashboard/sparePartsOrderList'>SpareParts Order</Link></li>

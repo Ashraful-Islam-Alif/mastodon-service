@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from './Loading';
-
+import google from './google.png'
+import useToken from '../../../hooks/useToken';
 
 const CreateAccount = () => {
     const [agree, setAgree] = useState(false)
@@ -15,7 +16,13 @@ const CreateAccount = () => {
     let location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
-
+    // Google SignIn
+    const [
+        signInWithGoogle,
+        userG,
+        loadingG,
+        errorG
+    ] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -25,14 +32,19 @@ const CreateAccount = () => {
 
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    // const [token] = useToken(user || userG)
+
+
     const navigateLogin = event => {
         navigate('/login')
     }
-    if (loading) {
+    if (loading || loadingG) {
         return <Loading></Loading>
     }
 
-    if (user) {
+    if (user || userG) {
+        // console.log(user || userG);
         navigate(from, { replace: true });
     }
     const handleSubmit = async (event) => {
@@ -44,7 +56,6 @@ const CreateAccount = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         console.log('Updated profile');
-        navigate('/')
     }
     return (
         <div style={{
@@ -52,7 +63,7 @@ const CreateAccount = () => {
         }} className='flex items-center justify-center flex-col h-screen '>
             <div style={{
                 backgroundImage: `url("https://i.ibb.co/KDhVqRG/HMD4dj.webp")`
-            }} className='bg-gray-200 shadow-xl rounded-xl py-20 px-5 '>
+            }} className='bg-gray-200 shadow-xl rounded-xl py-8 px-5 '>
                 <Form onSubmit={handleSubmit}>
                     <h2 className='text-center text-4xl font-bold text-white py-4'>Create Account</h2>
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">
@@ -73,6 +84,11 @@ const CreateAccount = () => {
                     <br />
                     <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto  ml-2 px-28 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl  py-2.5 text-center mr-2 '>
                         Register
+                    </Button>
+                    <div className='divider text-white'>OR</div>
+                    <Button type="submit" className='w-80 mx-auto  ml-2 px-4 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg  py-2.5 text-center mr-2 border-none' onClick={() => signInWithGoogle()}>
+                        <img style={{ width: 20 }} src={google} alt="" srcset="" />
+                        <span className='text-md md:text-lg'> Continue with Google</span>
                     </Button>
                 </Form>
                 <div className='p-2 text-white'>
