@@ -154,9 +154,9 @@ const Banner = () => {
                             <div className="card-body">
                                 <form className='grid grid-rows-4 gap-2' ref={form} onSubmit={sendEmail}>
                                     {/* <label className='my-2'>Name</label> */}
-                                    <input className='form-control input input-bordered' type="text" name="name" defaultValue={user.displayName} disabled required />
+                                    <input className='form-control input input-bordered' type="text" name="name" defaultValue={user?.displayName} disabled required />
                                     {/* <label className='my-2'>Email</label> */}
-                                    <input className='form-control input input-bordered' type="email" name="email" defaultValue={user.email} disabled required />
+                                    <input className='form-control input input-bordered' type="email" name="email" defaultValue={user?.email} disabled required />
                                     <input placeholder='Phone Number' className='form-control input input-bordered' type="number" name="number" required />
                                     <input className='form-control input input-bordered' placeholder='Address' name="address" required />
                                     {/* <label className='my-2'>Message</label> */}

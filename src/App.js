@@ -20,6 +20,8 @@ import { useEffect, useState } from 'react';
 import DetailingOrder from './Pages/Dashboard/DetailingOrder';
 import SparePartsOrder from './Pages/Dashboard/SparePartsOrder';
 import MechanicsOrder from './Pages/Dashboard/MechanicsOrder';
+import AllUsers from './Pages/Dashboard/AllUsers';
+import RequireAdmin from './Pages/Login/Login/RequireAdmin';
 
 function App() {
   const [loading, setLoading] = useState(false)
@@ -52,6 +54,11 @@ function App() {
                 <Route index element={<DetailingOrder />}></Route>
                 <Route path='sparePartsOrderList' element={<SparePartsOrder />}></Route>
                 <Route path='mechanicsOrderList' element={<MechanicsOrder />}></Route>
+                <Route path='users' element={
+                  <RequireAdmin>
+                    <AllUsers />
+                  </RequireAdmin>
+                }></Route>
               </Route>
               <Route path='/login' element={<Login></Login>}></Route>
               <Route path='/register' element={<CreateAccount></CreateAccount>}></Route>

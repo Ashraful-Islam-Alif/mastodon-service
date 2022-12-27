@@ -1,10 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 import Navbar from '../Home/Navbar/Navbar';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
     return (
-
         <>
             <Navbar></Navbar>
             <div className="drawer drawer-mobile">
@@ -21,6 +25,7 @@ const Dashboard = () => {
                         <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><Link to='/dashboard'>Detailing Order</Link></li>
                         <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><Link to='/dashboard/sparePartsOrderList'>SpareParts Order</Link></li>
                         <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><Link to='/dashboard/mechanicsOrderList'>Mechanics Order</Link></li>
+                        {admin && <li className='hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]'><Link to='/dashboard/users'>All Users</Link></li>}
                     </ul>
 
                 </div>

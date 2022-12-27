@@ -8,6 +8,7 @@ const Navbar = () => {
     const [user] = useAuthState(auth)
     const handleSignOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     }
     return (
         <div className="navbar sticky z-50 top-0  bg-gray-200 ">

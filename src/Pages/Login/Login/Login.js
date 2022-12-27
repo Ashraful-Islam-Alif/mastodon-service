@@ -8,6 +8,8 @@ import { Button, Form } from 'react-bootstrap';
 import './Login.css'
 import Loading from './Loading';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
+import { useEffect } from 'react';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -40,6 +42,8 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password);
     }
 
+    const [token] = useToken(user || userG)
+
     const navigateRegister = event => {
         navigate('/register')
     }
@@ -53,9 +57,12 @@ const Login = () => {
             toast('please enter your email address')
         }
     }
-    if (user || userG) {
-        navigate(from, { replace: true });
-    }
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
     if (loading || loadingG) {
         return <Loading></Loading>
@@ -71,27 +78,27 @@ const Login = () => {
             <div className='flex items-center justify-center flex-col h-screen '>
                 <div style={{
                     backgroundImage: `url("https://i.ibb.co/KDhVqRG/HMD4dj.webp")`
-                }} className='bg-gray-400 shadow-xl rounded-xl py-8 px-12 '>
+                }} className='bg-gray-400 shadow-xl rounded-xl py-8 px-5'>
                     <Form onSubmit={handleSubmit}>
-                        <h2 className='text-center text-4xl font-bold text-white py-6 '>Please Login</h2>
+                        <h2 className='text-center text-4xl font-bold text-white py-2 md:py-6 '>Please Login</h2>
                         <Form.Group className="mb-3  p-2 text-black" controlId="formBasicEmail">
                             <Form.Label className='text-white'>Email address</Form.Label>
-                            <Form.Control className='px-16 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
+                            <Form.Control className='w-full max-w-xs rounded-lg px-8 p-2 pl-3 bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
 
                         </Form.Group>
 
                         <Form.Group className="mb-3 p-2 text-black" controlId="formBasicPassword">
                             <Form.Label className='text-white'>Password</Form.Label>
-                            <Form.Control className='px-16 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
+                            <Form.Control className='w-full max-w-xs px-8 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
 
                         </Form.Group>
-                        <Button type="submit" className='w-50 mx-auto  ml-2 px-28 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg  py-2.5 text-center mr-2 border-none'>
+                        <Button type="submit" className='btn btn-block text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg text-center border-none'>
                             Login
                         </Button>
                         <div className='divider text-white'>OR</div>
-                        <Button type="submit" className='w-50 mx-auto  ml-2 px-4 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg  py-2.5 text-center mr-2 border-none' onClick={() => signInWithGoogle()}>
-                            <img style={{ width: 20 }} src={google} alt="" srcset="" />
-                            <span className='text-md md:text-lg'> Continue with Google</span>
+                        <Button type="submit" className='btn btn-block text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-sm md:text-lg text-center border-none' onClick={() => signInWithGoogle()}>
+                            <img style={{ width: 24 }} src={google} alt="" srcset="" />
+                            <span> Continue with Google</span>
                         </Button>
                     </Form>
 

@@ -1,17 +1,34 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const DetailingOrder = () => {
     const [detailingOrders, setDetailingOrders] = useState([])
     const [user] = useAuthState(auth)
+    const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/detailingOrderbooking?CustomerEmail=${user?.email}`)
-                .then(res => res.json())
+            fetch(`http://localhost:5000/detailingOrderbooking?CustomerEmail=${user?.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/')
+                    }
+                    return res.json()
+                })
                 .then(data => {
+
                     setDetailingOrders(data)
                 })
         }
@@ -34,7 +51,9 @@ const DetailingOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            detailingOrders.map((s, index) => <tr>
+                            detailingOrders.map((s, index) => <tr
+                                key={s._id}
+                            >
                                 <th>{index + 1}</th>
                                 <td>{s.CustomerName}</td>
                                 <td>{s.Cbrands}</td>

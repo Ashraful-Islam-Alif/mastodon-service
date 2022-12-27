@@ -33,7 +33,9 @@ const MechanicsOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            mechanicsOrders.map((s, index) => <tr>
+                            mechanicsOrders.map((s, index) => <tr
+                                key={s._id}
+                            >
                                 <th>{index + 1}</th>
                                 <td>{s.CustomerName}</td>
                                 <td>{s.Cbrands}</td>

@@ -33,8 +33,7 @@ const CreateAccount = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    // const [token] = useToken(user || userG)
-
+    const [token] = useToken(user || userG)
 
     const navigateLogin = event => {
         navigate('/login')
@@ -43,7 +42,7 @@ const CreateAccount = () => {
         return <Loading></Loading>
     }
 
-    if (user || userG) {
+    if (token) {
         // console.log(user || userG);
         navigate(from, { replace: true });
     }
@@ -68,27 +67,27 @@ const CreateAccount = () => {
                     <h2 className='text-center text-4xl font-bold text-white py-4'>Create Account</h2>
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">
                         <Form.Label className='text-white'>Your Name</Form.Label>
-                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={nameRef} type="text" placeholder="Enter Your Name" required />
+                        <Form.Control className='w-full max-w-xs px-8 p-2 pl-3 rounded-lg bg-gray-300' ref={nameRef} type="text" placeholder="Enter Your Name" required />
                     </Form.Group>
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicEmail">
                         <Form.Label className='text-white'>Email address</Form.Label>
-                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
+                        <Form.Control className='w-full max-w-xs px-8 p-2 pl-3 rounded-lg bg-gray-300' ref={emailRef} type="email" placeholder="Enter Email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3 p-2 text-black" controlId="formBasicPassword">
                         <Form.Label className='text-white'>Password</Form.Label>
-                        <Form.Control className='px-12 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
+                        <Form.Control className='w-full max-w-xs px-8 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
                     </Form.Group>
                     <input className='ml-2' onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
                     <label htmlFor="terms" className={agree ? "text-white ps-2 ml-2" : "ps-2 ml-2 text-red-600 mb-3"}>Accept Mastodon Terms and Conditions</label>
                     <br />
-                    <Button disabled={!agree} variant="warning" type="submit" className='w-50 mx-auto  ml-2 px-28 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl  py-2.5 text-center mr-2 '>
+                    <Button disabled={!agree} variant="warning" type="submit" className='btn btn-block text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl  py-2.5 text-center mr-2 '>
                         Register
                     </Button>
                     <div className='divider text-white'>OR</div>
-                    <Button type="submit" className='w-80 mx-auto  ml-2 px-4 p-2 mb-3 text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-lg  py-2.5 text-center mr-2 border-none' onClick={() => signInWithGoogle()}>
-                        <img style={{ width: 20 }} src={google} alt="" srcset="" />
-                        <span className='text-md md:text-lg'> Continue with Google</span>
+                    <Button type="submit" className='btn btn-block text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-sm md:text-lg  py-2.5 text-center mr-2 border-none' onClick={() => signInWithGoogle()}>
+                        <img style={{ width: 24 }} src={google} alt="" srcset="" />
+                        <span> Continue with Google</span>
                     </Button>
                 </Form>
                 <div className='p-2 text-white'>

@@ -144,7 +144,7 @@ const Banner = () => {
                     className=" ">
                     <div className="grid justify-items-center lg:grid-cols-2">
                         <div className="flex flex-col justify-center mb-4">
-                            <h2 className='text-[#006a4e] text-4xl md:text-6xl lg:text-8xl font-bold py-4'>Buy A Car</h2>
+                            <h2 className='text-[#006a4e] text-4xl md:text-6xl lg:text-8xl font-bold py-4'>Car Wash</h2>
                             <p className='text-lg md:text-2xl lg:text-4xl py-4 '>We will deliver you happiness for sure.</p>
                             <div>
                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center">Request Brochure</button>
@@ -154,9 +154,9 @@ const Banner = () => {
                             <div className="card-body">
                                 <form className='grid grid-rows-4 gap-2' ref={form} onSubmit={sendEmail}>
                                     {/* <label className='my-2'>Name</label> */}
-                                    <input className='form-control input input-bordered' type="text" name="name" defaultValue={user.displayName} disabled required />
+                                    <input className='form-control input input-bordered' type="text" name="name" defaultValue={user?.displayName} disabled required />
                                     {/* <label className='my-2'>Email</label> */}
-                                    <input className='form-control input input-bordered' type="email" name="email" defaultValue={user.email} disabled required />
+                                    <input className='form-control input input-bordered' type="email" name="email" defaultValue={user?.email} disabled required />
                                     <input placeholder='Phone Number' className='form-control input input-bordered' type="number" name="number" required />
                                     <input className='form-control input input-bordered' placeholder='Address' name="address" required />
                                     {/* <label className='my-2'>Message</label> */}
