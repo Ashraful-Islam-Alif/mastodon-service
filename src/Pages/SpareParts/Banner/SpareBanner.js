@@ -25,36 +25,15 @@ const SpareBanner = () => {
             }, (error) => {
                 console.log(error.text);
             });
-        const SparePartsBooking = {
-            CustomerName: e?.target?.name?.value,
-            CustomerEmail: e?.target?.email?.value,
-            CustomerNumber: e?.target?.number?.value,
-            CustomerAddress: e?.target?.address?.value,
-            Cbrands,
-            Cmodel,
-            CCategories,
-            CTypes
-        }
-        fetch('http://localhost:5000/sparePartsOrderbooking', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(SparePartsBooking)
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                e.target.reset();
-                toast('Order Place Successfully')
-            })
+        e.target.reset();
+        toast('Order Place Successfully')
     };
 
     // Dynamic selection for car database start
     const [carModelData, setCarModelData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/cardata')
+        fetch('CarDatabase.json')
             .then(res => res.json())
             .then(data => setCarModelData(data))
     }, [])
@@ -158,9 +137,9 @@ const SpareBanner = () => {
                             <div className="card-body">
                                 <form className='grid grid-rows-4 gap-2' ref={form} onSubmit={sendEmail}>
                                     {/* <label className='my-2'>Name</label> */}
-                                    <input className='form-control input input-bordered' type="text" name="name" defaultValue={user?.displayName} disabled required />
+                                    <input placeholder="Full Name" className='form-control input input-bordered' type="text" name="name" required />
                                     {/* <label className='my-2'>Email</label> */}
-                                    <input className='form-control input input-bordered' type="email" name="email" defaultValue={user?.email} disabled required />
+                                    <input placeholder="Email" className='form-control input input-bordered' type="email" name="email" required />
                                     <input placeholder='Phone Number' className='form-control input input-bordered' type="number" name="number" required />
                                     <input className='form-control input input-bordered' placeholder='Address' name="address" required />
                                     {/* <label className='my-2'>Message</label> */}

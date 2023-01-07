@@ -18,16 +18,13 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        {user && <li className='p-3 mr-2 rounded-xl text-[#006a4e] text-lg font-bold underline '>{user?.displayName}</li>}
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/home'>Home</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/aboutus'>AboutUs</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/buyCar'>Detailing</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>Spare Parts</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Mechanics</Link>
                         <Link className='p-2 ml-2 mb-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
-                        {
-                            user && <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/dashboard'>Dashboard</Link>
-                        }
-
                         <li>
                             {user ?
                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] rounded-xl text-md px-5 py-2.5 text-center mr-2 mb-2 ml-2" onClick={handleSignOut}>SignOut</button>
@@ -69,20 +66,14 @@ const Navbar = () => {
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/spareParts'>SpareParts</Link>
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/service'>Services</Link> */}
                     <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/blog'>Blogs</Link>
+                    {user && <li className='p-3 mr-2 rounded-xl text-[#006a4e] text-lg font-bold underline '>{user?.displayName}</li>}
                 </ul>
-                {
-                    user && <Link className='p-3 mr-2 hover:text-white hover:bg-[#94ca21cf] rounded-xl text-[#006a4e]' to='/dashboard'>Dashboard</Link>
-                }
+
                 {user ?
                     <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] rounded-xl font-medium  text-md px-5 py-2.5 text-center mr-2 mb-2 mt-2" onClick={handleSignOut}>SignOut</button>
                     :
                     <a href="/login"><button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] rounded-xl font-medium  text-md px-5 py-2.5 text-center mr-2 mb-2 mt-2">Login</button></a>
                 }
-            </div>
-            <div className="navbar-end">
-                <label tabIndex={1} htmlFor="dashboard-slidder" className="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
             </div>
         </div>
     );
