@@ -39,12 +39,37 @@ const Banner = () => {
             }, (error) => {
                 console.log(error.text);
             });
-        e.target.reset();
-        toast('Order Place Successfully')
+        const detailingBooking = {
+            CustomerName: e?.target?.name?.value,
+            CustomerEmail: e?.target?.email?.value,
+            CustomerNumber: e?.target?.number?.value,
+            CustomerAddress: e?.target?.address?.value,
+            Cbrands,
+            Cmodel,
+            CPackage,
+            CPrice,
+        }
+        fetch('https://mastodon-service-server.vercel.app/detailingOrderbooking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(detailingBooking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                e.target.reset();
+                toast('Order Place Successfully')
+            })
     };
 
     //Package
     const [{ buyCarPackages, price }, setBuyCarPackages] = useState({})
+    const [Cbrands, setbrands] = useState();
+    const [Cmodel, setmodel] = useState();
+    const [CPackage, setPackage] = useState();
+    const [CPrice, setPrice] = useState();
 
     const CarPackages = PackagesInfo.map((buyCarPackages) => (
         <option key={buyCarPackages.packages} value={buyCarPackages.packages}>
@@ -59,10 +84,14 @@ const Banner = () => {
     ))
     function handlecarPackages(event) {
         setBuyCarPackages(data => ({ price: '', buyCarPackages: event.target.value }));
+        const carPackage = event?.target?.value;
+        setPackage(carPackage);
     }
 
     function handlePrice(event) {
         setBuyCarPackages(data => ({ ...data, price: event.target.value }));
+        const carPrice = event?.target?.value;
+        setPrice(carPrice);
     }
 
     // Dynamic selection start
@@ -70,7 +99,7 @@ const Banner = () => {
 
 
     useEffect(() => {
-        fetch('CarDatabase.json')
+        fetch('https://mastodon-service-server.vercel.app/cardata')
             .then(res => res.json())
             .then(data => setCarModelData(data))
     }, [])
@@ -94,10 +123,14 @@ const Banner = () => {
 
     function handlecarModelChange(event) {
         setData(data => ({ model: '', carModel: event.target.value }));
+        const Carbrands = event?.target?.value;
+        setbrands(Carbrands)
     }
 
     function handleStateChange(event) {
         setData(data => ({ ...data, model: event.target.value }));
+        const carModel = event?.target?.value;
+        setmodel(carModel)
     }
     const [user] = useAuthState(auth)
     // Dynamic selection End
@@ -121,9 +154,9 @@ const Banner = () => {
                             <div className="card-body">
                                 <form className='grid grid-rows-4 gap-2' ref={form} onSubmit={sendEmail}>
                                     {/* <label className='my-2'>Name</label> */}
-                                    <input placeholder="Full Name" className='form-control input input-bordered' type="text" name="name" required />
+                                    <input className='form-control input input-bordered' type="text" name="name" defaultValue={user?.displayName} disabled required />
                                     {/* <label className='my-2'>Email</label> */}
-                                    <input placeholder="Email" className='form-control input input-bordered' type="email" name="email" required />
+                                    <input className='form-control input input-bordered' type="email" name="email" defaultValue={user?.email} disabled required />
                                     <input placeholder='Phone Number' className='form-control input input-bordered' type="number" name="number" required />
                                     <input className='form-control input input-bordered' placeholder='Address' name="address" required />
                                     {/* <label className='my-2'>Message</label> */}

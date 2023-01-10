@@ -25,15 +25,36 @@ const SpareBanner = () => {
             }, (error) => {
                 console.log(error.text);
             });
-        e.target.reset();
-        toast('Order Place Successfully')
+        const SparePartsBooking = {
+            CustomerName: e?.target?.name?.value,
+            CustomerEmail: e?.target?.email?.value,
+            CustomerNumber: e?.target?.number?.value,
+            CustomerAddress: e?.target?.address?.value,
+            Cbrands,
+            Cmodel,
+            CCategories,
+            CTypes
+        }
+        fetch('https://mastodon-service-server.vercel.app/sparePartsOrderbooking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(SparePartsBooking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                e.target.reset();
+                toast('Order Place Successfully')
+            })
     };
 
     // Dynamic selection for car database start
     const [carModelData, setCarModelData] = useState([])
 
     useEffect(() => {
-        fetch('CarDatabase.json')
+        fetch('https://mastodon-service-server.vercel.app/cardata')
             .then(res => res.json())
             .then(data => setCarModelData(data))
     }, [])

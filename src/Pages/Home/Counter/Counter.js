@@ -13,7 +13,7 @@ const Counter = () => {
         //     <div>counter </div>
         //     <div>I am here</div>
         // </div>
-        <div className="bg-gray-200 py-32 px-8">
+        <div className="bg-gray-200 py-32">
             <div className="container mx-auto  ">
                 <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center">
                     <div>
@@ -54,16 +54,14 @@ const Counter = () => {
                         </div>
                     </div>
                     <div>
-                        <div>
-                            <h5 className="text-xl md:text-2xl lg:text-5xl  text-[#006a4e] font-bold  mt-3 ">
-                                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
-                                    {({ isVisible }) => (
-                                        <div style={{ height: 30 }}>
-                                            {isVisible ? <CountUp end={orderBooking} /> : null}
-                                        </div>
-                                    )}
-                                </VisibilitySensor>
-                            </h5>
+                        <div className="text-xl md:text-2xl lg:text-5xl text-[#006a4e] font-bold  mt-3">
+                            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                                {({ isVisible }) => (
+                                    <div style={{ height: 30 }}>
+                                        {isVisible ? <CountUp end={orderBooking} /> : null}
+                                    </div>
+                                )}
+                            </VisibilitySensor>
                         </div>
                         <div>
                             <p className=" font-medium lg:text-xl mt-1 md:mt-2">
