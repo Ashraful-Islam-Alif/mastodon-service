@@ -45,7 +45,13 @@ const MechanicsOrder = () => {
                                 <td>{s.CPackage}</td>
                                 <td>{s.CPrice}</td>
                                 <td>{(s.CPrice && !s.paid) && <Link to={`/dashboard/mechanicsPayment/${s._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
-                                    {(s.CPrice && s.paid) && <span className='btn btn-xs btn-success'>Paid</span>}</td>
+                                    {(s.CPrice && s.paid) &&
+                                        <div>
+                                            <p> <span className='text-green-500 font-bold text-center'>Paid</span></p>
+                                            <p>Transaction id: <span className='text-green-500 font-bold text-center'>{s.transactionId}</span></p>
+                                        </div>
+                                    }</td>
+
                             </tr>)
                         }
                     </tbody>

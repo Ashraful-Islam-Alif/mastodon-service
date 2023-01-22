@@ -3,7 +3,6 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../Login/Login/Loading';
 import CheckoutForm from './CheckoutForm';
@@ -14,6 +13,13 @@ const Payment = () => {
     const { id } = useParams();
     const url = `https://mastodon-service-server.vercel.app/mechanicsOrderbooking/${id}`;
 
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, [1000])
+    }, [])
     const [payment, setPayment] = useState([])
     useEffect(() => {
         fetch(url, {
@@ -25,22 +31,26 @@ const Payment = () => {
             .then(res => res.json())
             .then(data => {
                 setPayment(data)
-                console.log(data);
             })
     }, [])
+    if (loading === true) {
+        return <Loading></Loading>
+    }
     return (
-        <div>
-            <div className='card w-50 max-w-md bg-base-100 shadow-xl my-12'>
-                <div className='card-body'>
-                    <p className='text-success'>Hello, {payment.CustomerName}</p>
-                    <h2>Please pay: ${payment.CPrice} </h2>
+        <div className='grid grid-cols-1'>
+            <div className='grid justify-center'>
+                <div className='card w-96 max-w-md bg-base-100 shadow-xl my-12'>
+                    <div className='card-body'>
+                        <p className='text-success'>Hello, {payment.CustomerName}</p>
+                        <h2>Please pay: ${payment.CPrice} </h2>
+                    </div>
                 </div>
-            </div>
-            <div className='card flex-shrink-0 w-50 max-w-md bg-base-100 shadow-xl'>
-                <div className='card-body'>
-                    <Elements stripe={stripePromise}>
-                        <CheckoutForm payment={payment} />
-                    </Elements>
+                <div className='card w-96 max-w-md bg-base-100 shadow-xl'>
+                    <div className='card-body'>
+                        <Elements stripe={stripePromise}>
+                            <CheckoutForm payment={payment} />
+                        </Elements>
+                    </div>
                 </div>
             </div>
         </div>

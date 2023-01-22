@@ -14,7 +14,7 @@ const Test = () => {
             input.value = "";
         }
         else {
-            const url = `http://localhost:5000/product/${inputText}`
+            const url = `https://mastodon-service-server.vercel.app/product/${inputText}`
             fetch(url)
                 .then(res => res.json())
                 .then(data => setData(data));

@@ -2,31 +2,30 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Loading from '../Login/Login/Loading';
 
 const CheckoutForm = ({ payment }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [CardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
+    const [processing, setProcessing] = useState(false);
+    const [success, setSuccess] = useState('');
+    const [transactionId, setTransactionId] = useState('');
 
-    const { price } = payment;
-
+    const { CPrice, CustomerName, CustomerEmail, _id } = payment;
     useEffect(() => {
         fetch('https://mastodon-service-server.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
+                'Content-Type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify({ price })
+            body: JSON.stringify({ CPrice }),
         })
             .then(res => res.json())
-            .then(data => {
-                if (data?.clientSecret) {
-                    setClientSecret(data.clientSecret);
-                }
-            })
-    }, [price])
+            .then(data => setClientSecret(data.clientSecret));
+    }, [CPrice])
 
     const handleSubmit = async (event) => {
         // Block native form submission.
@@ -47,8 +46,60 @@ const CheckoutForm = ({ payment }) => {
             card,
         });
 
-        setCardError(error?.message || '')
+        if (error) {
+            setCardError(error?.message);
+        }
+        else {
+            setCardError('');
+        }
+        setSuccess('');
+        setProcessing(true);
+
+        //confirm order payment
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: CustomerName,
+                        email: CustomerEmail
+                    },
+                },
+            },
+        );
+
+        if (confirmError) {
+            setCardError(confirmError?.message);
+            setProcessing(false);
+            return;
+        }
+        else {
+            setCardError('');
+            setTransactionId(paymentIntent.id);
+            setSuccess('Congrats! Your payment is completed.')
+
+            // store payment on database
+            const payment = {
+                Order: _id,
+                transactionId: paymentIntent.id
+            }
+            fetch(`https://mastodon-service-server.vercel.app/order/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                })
+        }
     };
+
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -68,12 +119,18 @@ const CheckoutForm = ({ payment }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe}>
                     Pay
                 </button>
             </form>
             {
                 CardError && <p className='text-red-500'>{CardError}</p>
+            }
+            {
+                success && <div className='text-green-500'>
+                    <p>{success}</p>
+                    <p>Your transactionId: <span className='text-orange-500 font-bold'>{transactionId}</span></p>
+                </div>
             }
 
         </>
