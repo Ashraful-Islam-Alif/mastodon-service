@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import Navbar from '../../Home/Navbar/Navbar';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SearchBox from '../../SpareParts/Searchbox/SearchBox';
 // import SearchBox from '../../SpareParts/Searchbox/SearchBox';
 
 const PackagesInfo = [
@@ -137,7 +138,7 @@ const Banner = () => {
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
-            {/* <SearchBox></SearchBox> */}
+            <SearchBox></SearchBox>
             <div className='container mx-auto  px-8 py-24 '>
                 <div data-aos="fade-up"
                     data-aos-duration="2000"

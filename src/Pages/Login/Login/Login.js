@@ -8,6 +8,8 @@ import { Button, Form } from 'react-bootstrap';
 import './Login.css'
 import Loading from './Loading';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
+import { useEffect } from 'react';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -40,6 +42,8 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password);
     }
 
+    const [token] = useToken(user || userG)
+
     const navigateRegister = event => {
         navigate('/register')
     }
@@ -54,9 +58,11 @@ const Login = () => {
         }
     }
 
-    if (user || userG) {
-        navigate(from, { replace: true });
-    }
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
     if (loading || loadingG) {
         return <Loading></Loading>

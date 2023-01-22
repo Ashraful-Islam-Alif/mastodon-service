@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import './SpareBanner.css'
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import SearchBox from "../Searchbox/SearchBox";
 // import UpperBanner from './UpperBanner';
 
 const SpareBanner = () => {
@@ -140,7 +141,7 @@ const SpareBanner = () => {
     return (
         <div className='bg-gray-100 sparebanner'>
             <Navbar></Navbar>
-            {/* <SearchBox></SearchBox> */}
+            <SearchBox></SearchBox>
             {/* <UpperBanner></UpperBanner> */}
             <div className='container mx-auto  px-8 py-24 '>
                 <div data-aos="fade-up"
@@ -168,7 +169,6 @@ const SpareBanner = () => {
                                         <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={carModel} onChange={handlecarModelChange} required>
                                             <option disabled selected>Which Brand do you Prefer? </option>
                                             {brands}
-
                                         </select>
                                     </div>
                                     <div className=''>

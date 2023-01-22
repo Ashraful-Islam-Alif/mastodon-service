@@ -1,0 +1,42 @@
+[
+    {
+        "name": "mitsubishi",
+        "image": "https://i.ibb.co/hgD5GQW/mitsubishi.jpg"
+    },
+    {
+        "name": "mercedes",
+        "image": "https://i.ibb.co/NNG3V57/mercedes.jpg"
+    },
+    {
+        "name": "bmw",
+        "image": "https://i.ibb.co/DK6S0X2/bmw.jpg"
+    },
+    {
+        "name": "toyota",
+        "image": "https://i.ibb.co/FVZDX5J/toyota.jpg"
+    },
+    {
+        "name": "mahindra",
+        "image": "https://i.ibb.co/JK4T6KG/mahindra.jpg"
+    },
+    {
+        "name": "ford",
+        "image": "https://i.ibb.co/9gyx7B9/ford.jpg"
+    },
+    {
+        "name": "tata",
+        "image": "https://i.ibb.co/0FZ1sbg/tata.jpg"
+    },
+    {
+        "name": "honda",
+        "image": "https://i.ibb.co/px66xTx/honda.jpg"
+    },
+    {
+        "name": "hyundai",
+        "image": "https://i.ibb.co/rv0mL2L/hyundai.jpg"
+    },
+    {
+        "name": "maruti-suzuki",
+        "image": "https://i.ibb.co/BKphcQy/maruti-suzuki.jpg"
+    }
+]

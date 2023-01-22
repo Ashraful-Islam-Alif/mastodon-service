@@ -32,7 +32,7 @@ const AllUsersRow = ({ user, refetch, index }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.deleteCount > 0) {
+                if (data.deletedCount > 0) {
                     toast.success('Successfully deleted an Admin')
                     refetch();
                 }

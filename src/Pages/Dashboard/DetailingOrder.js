@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const DetailingOrder = () => {
@@ -47,6 +47,7 @@ const DetailingOrder = () => {
                             <th>Model</th>
                             <th>Package</th>
                             <th>Price</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,9 @@ const DetailingOrder = () => {
                                 <td>{s.Cmodel}</td>
                                 <td>{s.CPackage}</td>
                                 <td>{s.CPrice}</td>
+                                <td>{(s.CPrice && !s.paid) && <Link to={`/dashboard/detailPayment/${s._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(s.CPrice && s.paid) && <span className='btn btn-xs btn-success'>Paid</span>}
+                                </td>
                             </tr>)
                         }
                     </tbody>
@@ -71,6 +75,7 @@ const DetailingOrder = () => {
                             <th>Model</th>
                             <th>Package</th>
                             <th>Price</th>
+                            <th>Payment</th>
                         </tr>
                     </tfoot>
                 </table>

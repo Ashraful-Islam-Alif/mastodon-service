@@ -1,4 +1,3 @@
-
 import { Route, Routes } from 'react-router-dom';
 import Services from './Pages/Services/Services';
 import AboutUs from './Pages/Home/AboutUs/AboutUs';
@@ -12,7 +11,16 @@ import Loading from './Pages/Login/Login/Loading';
 import PageNotFound from './Pages/NotFound/PageNotFound';
 import { ToastContainer } from 'react-toastify';
 import Test from './Pages/Test';
+import RequireAuth from './Pages/Login/Login/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard'
 import { useEffect, useState } from 'react';
+import DetailingOrder from './Pages/Dashboard/DetailingOrder';
+import SparePartsOrder from './Pages/Dashboard/SparePartsOrder';
+import MechanicsOrder from './Pages/Dashboard/MechanicsOrder';
+import AllUsers from './Pages/Dashboard/AllUsers';
+import RequireAdmin from './Pages/Login/Login/RequireAdmin';
+import MechanicsPayment from './Pages/Dashboard/MechanicsPayment';
+import DetailingPayment from './Pages/Dashboard/DetailingPayment';
 
 function App() {
   const [loading, setLoading] = useState(false)
@@ -37,6 +45,22 @@ function App() {
               <Route path='/test' element={<Test></Test>}></Route>
               <Route path='/service' element={<Services></Services>}></Route>
               <Route path='/blog' element={<Blogs></Blogs>}></Route>
+              <Route path="dashboard" element={
+                <RequireAuth>
+                  <Dashboard></Dashboard>
+                </RequireAuth>
+              } >
+                <Route index element={<DetailingOrder />}></Route>
+                <Route path='sparePartsOrderList' element={<SparePartsOrder />}></Route>
+                <Route path='mechanicsOrderList' element={<MechanicsOrder />}></Route>
+                <Route path='mechanicsPayment/:id' element={<MechanicsPayment />}></Route>
+                <Route path='detailPayment/:id' element={<DetailingPayment />}></Route>
+                <Route path='users' element={
+                  <RequireAdmin>
+                    <AllUsers />
+                  </RequireAdmin>
+                }></Route>
+              </Route>
               <Route path='/login' element={<Login></Login>}></Route>
               <Route path='/register' element={<CreateAccount></CreateAccount>}></Route>
               <Route path='*' elements={<PageNotFound />}></Route>

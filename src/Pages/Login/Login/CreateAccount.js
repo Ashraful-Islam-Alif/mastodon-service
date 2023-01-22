@@ -4,7 +4,8 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from './Loading';
-import google from './google.png';
+import google from './google.png'
+import useToken from '../../../hooks/useToken';
 
 const CreateAccount = () => {
     const [agree, setAgree] = useState(false)
@@ -32,6 +33,8 @@ const CreateAccount = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || userG)
+
     const navigateLogin = event => {
         navigate('/login')
     }
@@ -39,7 +42,8 @@ const CreateAccount = () => {
         return <Loading></Loading>
     }
 
-    if (user || userG) {
+    if (token) {
+        // console.log(user || userG);
         navigate(from, { replace: true });
     }
     const handleSubmit = async (event) => {

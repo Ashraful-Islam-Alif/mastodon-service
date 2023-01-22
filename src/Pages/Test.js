@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useState } from 'react';
 
 const Test = () => {
     const [data, setData] = useState([]);
@@ -9,41 +8,31 @@ const Test = () => {
         const error = document.getElementById("error");
         const inputText = input.value;
         input.value = '';
-
         if (inputText <= 0 || inputText >= 0) { //isNaN check number or string /others-true
             // alert("Please enter a number");
-            error.innerText = "Please Give a City name";
+            error.innerText = "Please search with car brand, model and parts name";
             input.value = "";
         }
-        // else if (inputText <= 0) {
-        //     error.innerText = "Please Give a Positive Number";
-        //     inputText.value = "";
-        // }
         else {
-            const url = `https://restcountries.com/v3.1/capital/${inputText}`
-            console.log(url)
+            const url = `http://localhost:5000/product/${inputText}`
             fetch(url)
                 .then(res => res.json())
                 .then(data => setData(data));
         }
-        // const searchButton = (e) => {
-        //     const input = document.getElementById("input-value")
-        //     const inputValue = input.value
-        //     console.log(inputValue)
-        // }
-
     }
 
     return (
         <div>
-            <h2 class="text-center">Play with Cards API</h2>
-
-            <div class=" grid justify-center ">
-                <div class="flex w-5/6 ">
-                    <input id="input-value" class="form-control rounded-lg p-2" type="search" placeholder="Search Your City" aria-label="Search" />
-                    <button onClick={(e) => searchButton(e)} class="btn btn-success mx-2 " type="submit">Search</button>
+            <div class=" grid grid-col-2 gap-2  ">
+                <div class=" grid grid-col-2 gap-2  ">
+                    <div class="flex ">
+                        <input id="input-value" class="form-control input input-bordered w-5/6" type="search" placeholder="Search car brand, model and parts name" aria-label="Search" />
+                        <button onClick={(e) => searchButton(e)} class="w-1/6 border cursor-pointer bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center text-white" type="submit">Search</button>
+                    </div>
+                    <h2 id="error" class="text-red-500 text-center my-4 font-bold"></h2>
+                    <div id="main" class="row">
+                    </div>
                 </div>
-
                 <h2 id="error" class="text-red-500 text-center my-4 font-bold"></h2>
 
                 <div id="main" class="row">
@@ -54,10 +43,10 @@ const Test = () => {
                 {
                     data.map(item => {
                         return (
-                            <div >
+                            <div key={item._id}>
                                 <div >
-                                    <h2>{item.capital}</h2>
-                                    <img src={item.flags.png} alt="" srcset="" />
+                                    <h2>{item.name}</h2>
+                                    <img src={item.image} alt="" srcset="" />
                                 </div>
                             </div>
                         )
