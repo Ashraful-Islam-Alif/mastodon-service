@@ -12,15 +12,15 @@ import SearchBox from '../../SpareParts/Searchbox/SearchBox';
 const DurationInfo = [
     {
         durations: "Hourly",
-        prices: [" ", "400"]
+        prices: ["400"]
     },
     {
         durations: "Half Day",
-        prices: [" ", "1000"]
+        prices: ["1000"]
     },
     {
         durations: "Full Day",
-        prices: [" ", "1600"]
+        prices: ["1600"]
     }
 ]
 
@@ -56,9 +56,9 @@ const Banner = () => {
         setPackage(carPackage);
     }
 
-    function handlePrice(event) {
-        setBuyCarPackages(data => ({ ...data, price: event.target.value }));
-        const carPrice = event?.target?.value;
+    function handlePrice(e) {
+        setBuyCarPackages(data => ({ ...data, price: e.target.value }));
+        const carPrice = e?.target?.value;
         setPrice(carPrice);
     }
 
@@ -175,13 +175,13 @@ const Banner = () => {
                                         </select>
                                     </div>
                                     <div className='py-4'>
-                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={mechanicsDuration} onChange={handlecarDuration} required>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carBrand' value={mechanicsDuration} onChange={(e) => handlecarDuration(e.target.value)} required>
                                             <option disabled selected>Packages </option>
                                             {CarDuration}
                                         </select>
                                     </div>
                                     <div className=''>
-                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={price} onChange={handlePrice} required>
+                                        <select className='select select-bordered w-full max-w-xs font-normal' name='carModel' value={price} onChange={(e) => handlePrice(e.target.value)} required>
                                             <option disabled selected>Prices </option>
                                             {CarDurationPrices}
                                         </select>
