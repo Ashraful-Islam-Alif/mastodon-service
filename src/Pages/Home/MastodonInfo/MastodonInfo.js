@@ -3,7 +3,7 @@ import { IdentificationIcon } from '@heroicons/react/24/solid'
 import { CalendarDaysIcon } from '@heroicons/react/24/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCar } from '@fortawesome/free-solid-svg-icons'
-const MastodonInfo = () => {
+const mastodonInfo = () => {
     return (
         <div className='container mx-auto py-32 px-8'>
 
@@ -38,4 +38,4 @@ const MastodonInfo = () => {
     );
 };
 
-export default MastodonInfo;
+export default mastodonInfo;

@@ -11,7 +11,7 @@ const Footer = () => {
                             <img src="https://i.ibb.co/8KPBBhf/picture.png" />
                         </div>
                         <div className='px-2'>
-                            <h2>Mastodon Limited</h2>
+                            <h2>mastodon Limited</h2>
                         </div>
                     </span>
                     <span><p>House 08, Road 19, Nikunja 2, </p><br /><p>Khilkhet Dhaka 1229</p></span>
@@ -58,7 +58,7 @@ const Footer = () => {
 
 
             </footer>
-            <h2 className='text-center pt-4 pb-4 '>Copyright @ 2022 <span className='font-bold'>Mastodon Limited.</span> All Rights reserved.</h2>
+            <h2 className='text-center pt-4 pb-4 '>Copyright @ 2022 <span className='font-bold'>mastodon Limited.</span> All Rights reserved.</h2>
         </div>
     );
 };

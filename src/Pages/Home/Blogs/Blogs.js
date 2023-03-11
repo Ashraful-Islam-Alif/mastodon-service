@@ -22,7 +22,7 @@ const Blogs = () => {
                                         <figure><img src="https://i.ibb.co/Yy9HjkT/mid-adult-mechanic-writing-clipboard-while-repairing-car-engine-with-coworker-auto-repair-shop.jpg" alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title">PaperWorks</h2>
-                                            <p>Vehicle Paperwork is frequently seen as a highly complex procedure due to the numerous paperwork difficulties that it entails. At Mastodon, you can get experienced Vehicle Paperwork service.</p>
+                                            <p>Vehicle Paperwork is frequently seen as a highly complex procedure due to the numerous paperwork difficulties that it entails. At mastodon, you can get experienced Vehicle Paperwork service.</p>
                                             <div className="card-actions ">
                                                 <button className="text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl px-5 py-2.5 text-center mr-2 mb-2 w-full">Details</button>
                                             </div>

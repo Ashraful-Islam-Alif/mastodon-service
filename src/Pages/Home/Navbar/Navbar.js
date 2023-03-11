@@ -45,7 +45,7 @@ const Navbar = () => {
                     </label>
                 </div>
                 <div className='flex flex-col'>
-                    <a href='/#home' className="hover:bg-none normal-case text-xl md:text-2xl ml-3 font-bold text-[#006a4e]">Mastodon</a>
+                    <a href='/#home' className="hover:bg-none normal-case text-xl md:text-2xl ml-3 font-bold text-[#006a4e]">mastodon</a>
                     <a href='/#home' className="hover:bg-none normal-case text-xs md:text-sm ml-3 font-sans text-[#006a4e]">Automobile Marketplace</a>
                 </div>
             </div>

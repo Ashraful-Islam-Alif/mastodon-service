@@ -10,13 +10,11 @@ import Navbar from './Navbar/Navbar';
 import Subscription from './Subscription/Subscription';
 import { useAuthState } from "react-firebase-hooks/auth";
 import Testimonials from './Testimonials/Testimonials';
-import HomeBanner from './HomeBanner/HomeBanner';
 import OurCustomers from './OurCustomers/OurCustomers';
-import Awards from './Awards/Awards';
 import FAQ from './Awards/FAQ/FAQ';
-import MastodonInfo from './MastodonInfo/MastodonInfo';
 import Counter from './Counter/Counter';
 import OurServices from './OurServices/OurServices';
+import OurGuarantee from './OurGuarantee/OurGuarantee';
 const Home = () => {
     const hoursMinSecs = { days: 29, hours: 24, minutes: 60, seconds: 60 }
     const [user] = useAuthState(auth)
@@ -24,10 +22,10 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Banner></Banner>
-            <MastodonInfo></MastodonInfo>
-            <Counter></Counter>
+            <OurGuarantee></OurGuarantee>
             <OurServices></OurServices>
             <OurCustomers></OurCustomers>
+            <Counter></Counter>
             <Testimonials></Testimonials>
             <FAQ></FAQ>
             {/* <HomeBanner></HomeBanner> */}

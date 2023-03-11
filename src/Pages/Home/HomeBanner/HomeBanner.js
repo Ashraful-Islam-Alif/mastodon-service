@@ -9,7 +9,7 @@ const HomeBanner = () => {
 
                     <div
                         className=' flex flex-col justify-center'>
-                        <h2 className='text-[#006a4e] text-2xl md:text-3xl lg:text-6xl font-semibold'>MASTODON</h2>
+                        <h2 className='text-[#006a4e] text-2xl md:text-3xl lg:text-6xl font-semibold'>mastodon</h2>
                         <h3 className='text-[#000] text-xl md:text-3xl mb-8 font-semibold'>The | Automation | Automobile</h3>
 
                         <div className='flex flex-col '>

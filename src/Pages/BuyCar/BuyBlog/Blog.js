@@ -10,7 +10,7 @@ const Blog = () => {
                         <figure><img className='p-2 rounded-2xl' src="https://i.ibb.co/Yy9HjkT/mid-adult-mechanic-writing-clipboard-while-repairing-car-engine-with-coworker-auto-repair-shop.jpg" alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">PaperWorks</h2>
-                            <p>Vehicle Paperwork is frequently seen as a highly complex procedure due to the numerous paperwork difficulties that it entails. At Mastodon, you can get experienced Vehicle Paperwork service.</p>
+                            <p>Vehicle Paperwork is frequently seen as a highly complex procedure due to the numerous paperwork difficulties that it entails. At mastodon, you can get experienced Vehicle Paperwork service.</p>
                         </div>
                     </div>
                     <div className="card  bg-base-100 shadow-xl">

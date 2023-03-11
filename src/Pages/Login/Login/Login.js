@@ -105,7 +105,7 @@ const Login = () => {
                     <div className='p-2'>
                         {errorElement}
                         <p className='text-white py-2'>Forget Password? <Link to='' className='text-white underline' onClick={resetPassword}>Reset</Link></p>
-                        <p className='text-white py-2'>New to Mastodon? <Link to='/register' className='text-white underline' onClick={navigateRegister}>Create Account</Link></p>
+                        <p className='text-white py-2'>New to mastodon? <Link to='/register' className='text-white underline' onClick={navigateRegister}>Create Account</Link></p>
                     </div>
                 </div>
                 <ToastContainer />

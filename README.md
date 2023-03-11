@@ -1,6 +1,6 @@
 # MASTODO SERVICE
 ## Technical Stack used & assessment
--Mastodon is a static react homepage website where- Home, About Us, Blogs, Contact us, Subscribe, Discount, and Footer Sections will be visible. 
+-mastodon is a static react homepage website where- Home, About Us, Blogs, Contact us, Subscribe, Discount, and Footer Sections will be visible. 
 -Without login, the user can’t see the Contact Us and Subscribe sections.
 -In the Navbar login and signout are conditional like, the signout button will be shown if the user is logged in, otherwise, the login button will be shown. 
 -After logged-in users are added to the firebase, for making this feature react firebase is used.
@@ -22,4 +22,4 @@
 11. Imgbb
 12. Google font- Poppins
 
-[Mastodon Review Video](https://drive.google.com/file/d/1MNylChAVAqDehouWzld3arr3Xf6dFZ4w/view?usp=sharing)
+[mastodon Review Video](https://drive.google.com/file/d/1MNylChAVAqDehouWzld3arr3Xf6dFZ4w/view?usp=sharing)

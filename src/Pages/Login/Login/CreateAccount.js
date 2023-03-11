@@ -79,7 +79,7 @@ const CreateAccount = () => {
                         <Form.Control className='w-full max-w-xs px-8 p-2 pl-3 rounded-lg bg-gray-300' ref={passwordRef} type="password" placeholder="Enter Password" required />
                     </Form.Group>
                     <input className='ml-2' onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
-                    <label htmlFor="terms" className={agree ? "text-white ps-2 ml-2" : "ps-2 ml-2 text-red-600 mb-3"}>Accept Mastodon Terms and Conditions</label>
+                    <label htmlFor="terms" className={agree ? "text-white ps-2 ml-2" : "ps-2 ml-2 text-red-600 mb-3"}>Accept mastodon Terms and Conditions</label>
                     <br />
                     <Button disabled={!agree} variant="warning" type="submit" className='btn btn-block text-white bg-[#1cbf1f90]  hover:bg-[#94ca21cf] font-bold rounded-xl text-xl  py-2.5 text-center mr-2 '>
                         Register

@@ -10,7 +10,7 @@ const FAQ = () => {
                         How do I order?
                     </div>
                     <div tabIndex={0} className="collapse-content ">
-                        <p className=' text-xs md:text-md '>Go at the top right side of our website, www.mastodonbd.com and schedule your wash filling the information or download our application Mastodon Wash</p>
+                        <p className=' text-xs md:text-md '>Go at the top right side of our website, www.mastodonbd.com and schedule your wash filling the information or download our application mastodon Wash</p>
                     </div>
                 </div>
                 <div tabIndex={0} className="collapse collapse-arrow border bg-base-200 rounded-box m-4">
@@ -26,7 +26,7 @@ const FAQ = () => {
                         Where is the “Custom” & “ADDs ON” section of the service?
                     </div>
                     <div tabIndex={0} className="collapse-content">
-                        <p className=' text-xs md:text-md '>These features are only accessible by our smartphone application- Mastodon Wash.</p>
+                        <p className=' text-xs md:text-md '>These features are only accessible by our smartphone application- mastodon Wash.</p>
                     </div>
                 </div>
                 <div tabIndex={0} className="collapse collapse-arrow border bg-base-200 rounded-box m-4">

@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <div id='home'>
-            <div id='home' className=' py-32 px-8 h-screen banner-image' style={{ backgroundImage: `url("https://i.ibb.co/3dqSZBQ/bg.jpg")` }}>
+            <div id='home' className=' py-32 px-8 banner-image' >
                 {/* <div className="hero-overlay bg-opacity-50"></div> */}
-                <div className='max-w-md'>
+                <div className='max-w-md '>
                     <h2 className='text-white text-2xl md:text-3xl lg:text-7xl font-semibold py-8'>Looking for?</h2>
                     <div className=" btn-group btn-group-vertical text-center">
                         <Link to='/buyCar' data-aos="fade-right"
